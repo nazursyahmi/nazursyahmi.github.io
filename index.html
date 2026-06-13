@@ -4,602 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ts Muhammad Nazur Syahmi | Senior Hardware Developer</title>
-  <meta name="description" content="Engineering platform of Ts Muhammad Nazur Syahmi, a Senior Hardware Developer focused on PCB design, firmware, hardware prototyping, IoT devices, and cloud-connected systems." />
+  <meta name="description" content="Professional portfolio of Ts Muhammad Nazur Syahmi, Senior Hardware Developer focused on PCB design, firmware, hardware prototypes, IoT devices, and cloud-connected systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f4f8fd;
-      --surface: #ffffff;
-      --surface-soft: #eef5fc;
-      --ink: #0b1728;
-      --muted: #526277;
-      --line: #d9e3ef;
-      --blue: #155eef;
-      --blue-dark: #0b3b8f;
-      --cyan: #0ea5c6;
-      --steel: #27384d;
-      --green: #11875d;
-      --shadow: 0 22px 60px rgba(20, 47, 84, .12);
-      --radius: 8px;
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background:
-        linear-gradient(90deg, rgba(21, 94, 239, .045) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(21, 94, 239, .045) 1px, transparent 1px),
-        linear-gradient(180deg, #ffffff 0%, var(--bg) 52%, #edf4fb 100%);
-      background-size: 42px 42px, 42px 42px, auto;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255, 255, 255, .88);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav-inner {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: 0;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
-      border-radius: var(--radius);
-      box-shadow: 0 12px 28px rgba(21, 94, 239, .24);
-    }
-
-    .brand small {
-      display: block;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      color: var(--steel);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .nav-links a {
-      padding: 10px 12px;
-      border-radius: var(--radius);
-    }
-
-    .nav-links a:hover {
-      background: var(--surface-soft);
-      color: var(--blue-dark);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-      color: var(--blue-dark);
-      font-weight: 900;
-      box-shadow: 0 8px 20px rgba(20, 47, 84, .07);
-    }
-
-    .btn.primary {
-      border-color: var(--blue);
-      background: var(--blue);
-      color: #fff;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(20, 47, 84, .12);
-    }
-
-    .hero {
-      padding: 84px 0 54px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .72fr);
-      gap: 42px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 18px;
-      padding: 8px 12px;
-      border: 1px solid #c8d9ee;
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .72);
-      color: var(--blue-dark);
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .eyebrow:before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: var(--green);
-      border-radius: 50%;
-    }
-
-    h1, h2, h3, p {
-      margin-top: 0;
-    }
-
-    h1 {
-      max-width: 820px;
-      margin-bottom: 22px;
-      font-size: clamp(44px, 7vw, 78px);
-      line-height: .95;
-      letter-spacing: 0;
-    }
-
-    .hero-lead {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 19px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 30px 0;
-    }
-
-    .signal-row {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      max-width: 760px;
-    }
-
-    .signal {
-      min-height: 92px;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .82);
-    }
-
-    .signal b {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--blue-dark);
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .signal span {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .portrait-panel {
-      position: relative;
-      border: 1px solid #cbd9e9;
-      border-radius: 16px;
-      background: #e8f1fb;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .portrait {
-      min-height: 560px;
-      background:
-        linear-gradient(180deg, rgba(8, 21, 39, 0) 45%, rgba(8, 21, 39, .78) 100%),
-        url('images/nazursyahmi.jpg') center top / cover no-repeat;
-    }
-
-    .portrait-caption {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      padding: 18px;
-      border: 1px solid rgba(255, 255, 255, .24);
-      border-radius: var(--radius);
-      background: rgba(10, 22, 38, .76);
-      color: #fff;
-      backdrop-filter: blur(14px);
-    }
-
-    .portrait-caption b {
-      display: block;
-      font-size: 17px;
-    }
-
-    .portrait-caption span {
-      color: #c9ddf7;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    section {
-      padding: 62px 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .section-kicker {
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      margin-bottom: 0;
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.05;
-      letter-spacing: 0;
-    }
-
-    .section-copy {
-      max-width: 520px;
-      margin-bottom: 0;
-      color: var(--muted);
-      font-weight: 650;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .88);
-      box-shadow: 0 10px 28px rgba(20, 47, 84, .07);
-    }
-
-    .capability {
-      min-height: 260px;
-      padding: 22px;
-    }
-
-    .icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-      border-radius: var(--radius);
-      background: #e5f0ff;
-      color: var(--blue-dark);
-      font-weight: 900;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-      font-size: 21px;
-      line-height: 1.2;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      padding: 6px 9px;
-      border: 1px solid #c9d9eb;
-      border-radius: var(--radius);
-      background: #f7fbff;
-      color: var(--steel);
-      font-size: 12px;
-      font-weight: 850;
-    }
-
-    .system-band {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #0b1728;
-      color: #e9f2ff;
-    }
-
-    .system-band .section-kicker,
-    .system-band h2 {
-      color: #fff;
-    }
-
-    .system-band .section-copy,
-    .system-band p {
-      color: #b7c8dd;
-    }
-
-    .workflow {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 1px;
-      overflow: hidden;
-      border: 1px solid #24415f;
-      border-radius: var(--radius);
-      background: #24415f;
-    }
-
-    .workflow-step {
-      min-height: 170px;
-      padding: 18px;
-      background: #10243a;
-    }
-
-    .workflow-step b {
-      display: block;
-      margin-bottom: 18px;
-      color: #7dd3fc;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .project {
-      display: block;
-      height: 100%;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .project-visual {
-      min-height: 170px;
-      display: grid;
-      place-items: center;
-      border-bottom: 1px solid var(--line);
-      background:
-        linear-gradient(90deg, rgba(21, 94, 239, .08) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(21, 94, 239, .08) 1px, transparent 1px),
-        linear-gradient(135deg, #e7f0fb, #f8fbff);
-      background-size: 24px 24px, 24px 24px, auto;
-      color: var(--blue-dark);
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .project-body {
-      padding: 22px;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .about-aside {
-      padding: 24px;
-      background: var(--blue-dark);
-      color: #fff;
-    }
-
-    .about-aside p {
-      color: #cfe1fb;
-    }
-
-    .about-main {
-      padding: 26px;
-    }
-
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .metric {
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #f8fbff;
-    }
-
-    .metric b {
-      display: block;
-      color: var(--blue-dark);
-      font-size: 20px;
-    }
-
-    .metric span {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 750;
-    }
-
-    .contact-band {
-      margin-bottom: 56px;
-      padding: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border: 1px solid #c3d7ef;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #ffffff, #eaf3ff);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-band p {
-      max-width: 650px;
-      margin-bottom: 0;
-      color: var(--muted);
-      font-weight: 650;
-    }
-
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      background: #fff;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .about {
-        grid-template-columns: 1fr;
-      }
-
-      .signal-row,
-      .grid-3,
-      .workflow {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .portrait {
-        min-height: 520px;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container {
-        width: min(100% - 28px, var(--max));
-      }
-
-      .nav-inner {
-        height: auto;
-        padding: 14px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 4px;
-      }
-
-      .hero {
-        padding-top: 48px;
-      }
-
-      h1 {
-        font-size: 44px;
-      }
-
-      .signal-row,
-      .grid-2,
-      .grid-3,
-      .workflow,
-      .metric-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head,
-      .contact-band,
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .portrait {
-        min-height: 460px;
-        background-size: cover;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <nav class="nav" aria-label="Main navigation">
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="brand" href="index.html" aria-label="Ts Muhammad Nazur Syahmi home">
         <span class="brand-mark">NS</span>
         <span>Ts Muhammad Nazur Syahmi<small>Senior Hardware Developer</small></span>
       </a>
       <div class="nav-links">
-        <a href="#capabilities">Capabilities</a>
-        <a href="#projects">Projects</a>
-        <a href="#workflow">Workflow</a>
-        <a href="projects.html">Projects Page</a>
-        <a href="notes.html">Notes</a>
-        <a href="contact.html">Contact</a>
-        <a href="doc/CV_Nazur_Syahmi_V2.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="active" href="index.html"><i class="bi bi-house"></i>Home</a>
+        <a href="#capabilities"><i class="bi bi-cpu"></i>Skills</a>
+        <a href="#projects"><i class="bi bi-kanban"></i>Projects</a>
+        <a href="notes.html"><i class="bi bi-journal-text"></i>Notes</a>
+        <a href="contact.html"><i class="bi bi-send"></i>Contact</a>
       </div>
     </div>
   </nav>
@@ -607,27 +31,34 @@
   <main>
     <header class="hero">
       <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Hardware to cloud systems</span>
-          <h1>Senior Hardware Developer building reliable connected products.</h1>
-          <p class="hero-lead">
-            I design and bring up practical engineering systems across PCB design, firmware,
-            hardware prototyping, IoT devices, and cloud-connected dashboards.
+        <div class="reveal">
+          <span class="eyebrow">Hardware to cloud product systems</span>
+          <h1>Building elegant connected hardware from circuit to dashboard.</h1>
+          <p class="lead">
+            I design practical engineering systems across PCB design, firmware, hardware prototyping,
+            IoT connectivity, and cloud dashboards, with a focus on reliability, clarity, and product-ready execution.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="#projects">View Engineering Work</a>
-            <a class="btn" href="contact.html">Discuss a Project</a>
-            <a class="btn" href="doc/CV_Nazur_Syahmi_V2.pdf" target="_blank" rel="noopener">Download Resume</a>
+            <a class="btn primary" href="#projects"><i class="bi bi-arrow-right-circle"></i>View Work</a>
+            <a class="btn" href="contact.html"><i class="bi bi-chat-dots"></i>Discuss a Project</a>
+            <a class="btn subtle" href="doc/CV_Nazur_Syahmi_V2.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-person"></i>Resume</a>
           </div>
-          <div class="signal-row" aria-label="Specialty areas">
-            <div class="signal"><b>PCB</b><span>Board design, review, and prototype readiness.</span></div>
-            <div class="signal"><b>Firmware</b><span>Device behavior, interfaces, and control logic.</span></div>
-            <div class="signal"><b>Prototype</b><span>Bring-up, debugging, validation, and iteration.</span></div>
-            <div class="signal"><b>Cloud</b><span>Connected telemetry, dashboards, and device data.</span></div>
+          <div class="motion-strip">
+            <img src="assets/images/profilegif.gif" alt="Animated engineering profile preview">
+            <div>
+              <strong>Builder mindset</strong>
+              <span>Hands-on hardware, firmware, and connected product delivery.</span>
+            </div>
+          </div>
+          <div class="signal-row">
+            <div class="card signal"><div class="icon-box"><i class="bi bi-motherboard"></i></div><h3>PCB</h3><p>Board design, review, prototype readiness, and bring-up thinking.</p></div>
+            <div class="card signal"><div class="icon-box"><i class="bi bi-terminal"></i></div><h3>Firmware</h3><p>Device behavior, interfaces, states, and embedded control logic.</p></div>
+            <div class="card signal"><div class="icon-box"><i class="bi bi-tools"></i></div><h3>Prototype</h3><p>Debugging, measurement, validation, iteration, and field realism.</p></div>
+            <div class="card signal"><div class="icon-box"><i class="bi bi-cloud-check"></i></div><h3>Cloud</h3><p>Telemetry, dashboards, device data, and monitoring workflows.</p></div>
           </div>
         </div>
 
-        <aside class="portrait-panel" aria-label="Portrait of Ts Muhammad Nazur Syahmi">
+        <aside class="portrait-panel reveal" aria-label="Portrait of Ts Muhammad Nazur Syahmi">
           <div class="portrait"></div>
           <div class="portrait-caption">
             <b>Ts Muhammad Nazur Syahmi</b>
@@ -637,171 +68,142 @@
       </div>
     </header>
 
-    <section id="capabilities">
+    <section class="section" id="capabilities">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <div>
-            <span class="section-kicker">Capabilities</span>
-            <h2>Engineering depth from circuit decisions to deployed devices.</h2>
+            <span class="kicker">Capabilities</span>
+            <h2>Engineering depth for teams that need the physical product to work.</h2>
           </div>
-          <p class="section-copy">
-            Focused support for teams that need a hands-on builder who can move between
-            electrical design, embedded behavior, hardware debugging, and connected product delivery.
-          </p>
+          <p class="section-copy">From component decisions to data visibility, I work across the layers that make connected products dependable.</p>
         </div>
 
         <div class="grid-3">
-          <article class="card capability">
-            <div class="icon">PCB</div>
-            <h3>PCB Design</h3>
-            <p>Schematic planning, component selection, layout review, design-for-prototype checks, and board-level troubleshooting.</p>
-            <div class="tag-list">
-              <span class="tag">Schematic</span><span class="tag">Layout</span><span class="tag">Bring-up</span>
-            </div>
+          <article class="card reveal">
+            <div class="icon-box"><i class="bi bi-diagram-3"></i></div>
+            <h3>Hardware Architecture</h3>
+            <p>Schematic planning, component choices, interface design, PCB review, power considerations, and board-level debugging.</p>
+            <div class="tag-list"><span class="tag">Schematic</span><span class="tag">Layout</span><span class="tag">Bring-up</span></div>
           </article>
-
-          <article class="card capability">
-            <div class="icon">FW</div>
-            <h3>Firmware Development</h3>
-            <p>Embedded control logic, sensor interfaces, communication protocols, device states, and field-ready behavior.</p>
-            <div class="tag-list">
-              <span class="tag">MCU</span><span class="tag">Sensors</span><span class="tag">Protocols</span>
-            </div>
+          <article class="card reveal">
+            <div class="icon-box"><i class="bi bi-braces"></i></div>
+            <h3>Embedded Firmware</h3>
+            <p>Sensor interfaces, peripheral control, communication protocols, device states, logging, and practical failure handling.</p>
+            <div class="tag-list"><span class="tag">ESP32</span><span class="tag">MCU</span><span class="tag">Protocols</span></div>
           </article>
-
-          <article class="card capability">
-            <div class="icon">IoT</div>
-            <h3>Cloud-Connected Devices</h3>
-            <p>Telemetry pipelines, dashboard-ready data, device monitoring, and practical integration between hardware and cloud systems.</p>
-            <div class="tag-list">
-              <span class="tag">Telemetry</span><span class="tag">Dashboards</span><span class="tag">Device Data</span>
-            </div>
+          <article class="card reveal">
+            <div class="icon-box"><i class="bi bi-graph-up-arrow"></i></div>
+            <h3>IoT & Dashboards</h3>
+            <p>Telemetry pipelines, backend integration, monitoring dashboards, and end-to-end data visibility from devices.</p>
+            <div class="tag-list"><span class="tag">MQTT</span><span class="tag">HTTP</span><span class="tag">Dashboards</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="system-band" id="workflow">
+    <section class="section dark-band" id="workflow">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <div>
-            <span class="section-kicker">Workflow</span>
-            <h2>A practical build path for hardware products.</h2>
+            <span class="kicker">Workflow</span>
+            <h2>A calm, disciplined path from idea to working system.</h2>
           </div>
-          <p class="section-copy">
-            Built for the realities of hardware work: constraints, measurements, debugging,
-            revisions, and the bridge between physical devices and software systems.
-          </p>
+          <p class="section-copy">Hardware rewards clarity. I use a build path that keeps risk visible and decisions testable.</p>
         </div>
-
-        <div class="workflow">
-          <div class="workflow-step"><b>01 Define</b><p>Clarify product intent, operating constraints, interfaces, risks, and test targets.</p></div>
+        <div class="workflow reveal">
+          <div class="workflow-step"><b>01 Define</b><p>Clarify product intent, constraints, interfaces, risks, and validation targets.</p></div>
           <div class="workflow-step"><b>02 Design</b><p>Translate requirements into board architecture, firmware structure, and data flow.</p></div>
-          <div class="workflow-step"><b>03 Prototype</b><p>Build the first working version and prepare it for measurement, stress, and iteration.</p></div>
-          <div class="workflow-step"><b>04 Validate</b><p>Debug hardware behavior, firmware edge cases, power, connectivity, and system stability.</p></div>
-          <div class="workflow-step"><b>05 Connect</b><p>Send meaningful device data to dashboards, logs, or cloud services for real use.</p></div>
+          <div class="workflow-step"><b>03 Prototype</b><p>Build the first useful version and prepare it for measurement and iteration.</p></div>
+          <div class="workflow-step"><b>04 Validate</b><p>Debug hardware behavior, edge cases, power, connectivity, and system stability.</p></div>
+          <div class="workflow-step"><b>05 Connect</b><p>Expose meaningful data through dashboards, logs, or cloud services.</p></div>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section class="section" id="projects">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <div>
-            <span class="section-kicker">Featured Work</span>
-            <h2>Featured engineering work.</h2>
+            <span class="kicker">Featured Work</span>
+            <h2>Project stories with real system thinking.</h2>
           </div>
-          <p class="section-copy">
-            Detailed case studies will be added here as each project is prepared for public viewing.
-          </p>
+          <div class="section-copy with-motion">
+            <p>A focused selection of hardware, firmware, automation, and IoT work.</p>
+            <img src="assets/images/profilegif.gif" alt="Animated project work accent">
+          </div>
         </div>
-
         <div class="grid-3">
-          <a class="card project" href="projects/smart-iot-datalogger.html">
-            <div class="project-visual">IoT Device Case Study</div>
+          <a class="project-card reveal" href="projects/smart-iot-datalogger.html">
+            <div class="project-media"><img src="assets/images/smart-iot-datalogger/datalogger1.png" alt="Smart IoT Datalogger prototype"></div>
             <div class="project-body">
               <h3>Smart IoT Datalogger</h3>
-              <p>ESP32-based modular datalogger with local storage, wireless communication, and backend dashboard integration.</p>
-              <div class="tag-list"><span class="tag">ESP32</span><span class="tag">Firmware</span><span class="tag">IoT</span></div>
+              <p>ESP32 modular datalogger with local logging, wireless communication, and backend dashboard integration.</p>
+              <div class="tag-list"><span class="tag">ESP32</span><span class="tag">LoRa</span><span class="tag">MQTT</span></div>
             </div>
           </a>
-
-          <article class="card project">
-            <div class="project-visual">PCB Board</div>
+          <a class="project-card reveal" href="projects/smart-rice-machine.html">
+            <div class="project-media"><i class="bi bi-credit-card-2-front"></i></div>
+            <div class="project-body">
+              <h3>Smart Rice Machine</h3>
+              <p>RFID-based automated rice distribution system designed for controlled NGO aid delivery during COVID-19.</p>
+              <div class="tag-list"><span class="tag">RFID</span><span class="tag">Automation</span><span class="tag">Backend</span></div>
+            </div>
+          </a>
+          <article class="project-card reveal">
+            <div class="project-media"><i class="bi bi-motherboard"></i></div>
             <div class="project-body">
               <h3>Custom PCB Prototype</h3>
-              <p>Not Available Right Now</p>
-              <div class="tag-list"><span class="tag">PCB</span><span class="tag">Prototype</span><span class="tag">Testing</span></div>
-            </div>
-          </article>
-
-          <article class="card project">
-            <div class="project-visual">Dashboard</div>
-            <div class="project-body">
-              <h3>Device Monitoring Dashboard</h3>
-              <p>Not Available Right Now</p>
-              <div class="tag-list"><span class="tag">Dashboard</span><span class="tag">Telemetry</span><span class="tag">Analytics</span></div>
+              <p>Selected board-level prototype notes and visuals are being prepared for public release.</p>
+              <div class="tag-list"><span class="tag">PCB</span><span class="tag">Testing</span><span class="tag">Validation</span></div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="profile">
-      <div class="container about">
-        <aside class="card about-aside">
-          <span class="section-kicker">Professional Profile</span>
+    <section class="section" id="profile">
+      <div class="container about-layout">
+        <aside class="card accent-panel reveal">
+          <span class="kicker">Professional Profile</span>
           <h2>Hands-on senior individual contributor.</h2>
-          <p>
-            My role is centered on designing, building, debugging, and improving systems that
-            connect physical hardware with dependable embedded and cloud behavior.
-          </p>
+          <p>I bring practical judgment to systems where hardware choices, firmware behavior, and user-facing data must align.</p>
+          <div class="about-visual" aria-label="Animated engineering profile visual">
+            <img src="assets/images/profilegif.gif" alt="Animated profile visual for Ts Muhammad Nazur Syahmi">
+          </div>
         </aside>
-
-        <div class="card about-main">
+        <div class="card reveal">
           <h3>Engineering Focus</h3>
-          <p>
-            I work best where hardware decisions and software behavior meet: selecting the
-            right components, designing boards for realistic prototypes, writing firmware
-            that handles device states clearly, and connecting devices to useful dashboards.
-          </p>
-          <p>
-            This site is structured as an engineering platform: a place for project case
-            studies, technical notes, professional capabilities, and contact paths for
-            collaborators, clients, and product teams.
-          </p>
-
-          <div class="metric-grid">
-            <div class="metric"><b>PCB</b><span>Design and prototype readiness</span></div>
-            <div class="metric"><b>Firmware</b><span>Embedded device behavior</span></div>
-            <div class="metric"><b>IoT</b><span>Connected product systems</span></div>
-            <div class="metric"><b>Cloud</b><span>Dashboards and telemetry</span></div>
+          <p>I work best where physical devices meet software systems: selecting components, designing realistic prototypes, writing firmware that handles device behavior clearly, and connecting telemetry to dashboards that help people make decisions.</p>
+          <div class="metrics">
+            <div class="metric"><strong>PCB</strong><p>Design and prototype readiness</p></div>
+            <div class="metric"><strong>FW</strong><p>Embedded device behavior</p></div>
+            <div class="metric"><strong>IoT</strong><p>Connected product systems</p></div>
+            <div class="metric"><strong>Cloud</strong><p>Dashboards and telemetry</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <div class="container">
-        <div class="contact-band">
+        <div class="contact-cta reveal">
           <div>
-            <span class="section-kicker">Next Step</span>
-            <h2>Have a hardware system to design, debug, or connect?</h2>
-            <p>
-              Contact details, resume access, and direct WhatsApp inquiry are available on the contact page.
-            </p>
+            <span class="kicker">Next Step</span>
+            <h2>Have a system to design, debug, or connect?</h2>
+            <p>Reach out for hardware, firmware, IoT, prototype, or dashboard work.</p>
           </div>
-          <a class="btn primary" href="contact.html">Discuss a Project</a>
+          <a class="btn" href="contact.html"><i class="bi bi-send"></i>Contact Me</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <span>&copy; 2026 Ts Muhammad Nazur Syahmi. Senior Hardware Developer.</span>
-      <span>PCB design | Firmware | Hardware prototypes | Cloud-connected devices</span>
+      <span>&copy; 2026 Ts Muhammad Nazur Syahmi</span>
+      <span>PCB Design | Firmware | IoT | Prototypes</span>
     </div>
   </footer>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>
