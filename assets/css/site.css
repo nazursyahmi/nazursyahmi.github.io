@@ -133,6 +133,34 @@ li + li { margin-top: .55rem; }
   transform: translateY(-1px);
 }
 
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.9);
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease);
+}
+
+.nav-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, .08);
+}
+
+.mobile-break {
+  display: inline;
+}
+
+.mobile-break {
+  display: inline;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1678,15 +1706,10 @@ button.btn { cursor: not-allowed; }
   padding: clamp(64px, 9vw, 116px) 0 78px;
 }
 
-.saas-home .saas-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
-  gap: clamp(36px, 6vw, 76px);
-  align-items: center;
-}
-
 .saas-home .saas-hero-copy h1 {
   max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 24px;
   font-size: clamp(48px, 7vw, 94px);
   line-height: .94;
@@ -1694,14 +1717,29 @@ button.btn { cursor: not-allowed; }
   text-wrap: balance;
 }
 
+.saas-home .saas-hero-copy {
+  text-align: center;
+}
+
+.saas-home .saas-hero-copy .eyebrow,
+.saas-home .saas-hero-copy .lead,
+.saas-home .saas-hero-copy .credibility-snapshot {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.saas-home .saas-hero-copy .hero-actions,
+.saas-home .saas-hero-copy .trust-strip {
+  justify-content: center;
+}
+
 .saas-home .saas-hero-copy .lead {
   max-width: 760px;
 }
 
 .saas-home .credibility-snapshot {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1px;
+  display: flex;
+  gap: 0;
   max-width: 920px;
   margin: 22px 0 0;
   overflow: hidden;
@@ -1711,7 +1749,7 @@ button.btn { cursor: not-allowed; }
   box-shadow: 0 18px 55px rgba(0,0,0,.18);
 }
 
-.saas-home .credibility-snapshot div {
+.saas-home .credibility-snapshot > div {
   min-height: 98px;
   padding: 14px;
   background: rgba(8, 11, 18, .68);
@@ -1772,6 +1810,8 @@ button.btn { cursor: not-allowed; }
 .saas-home .hero-product-panel {
   position: relative;
   overflow: hidden;
+  max-width: 520px;
+  margin: 0 auto;
   border: 1px solid rgba(255,255,255,.12);
   border-radius: 8px;
   background:
@@ -1793,19 +1833,20 @@ button.btn { cursor: not-allowed; }
 
 .saas-home .hero-panel-top {
   position: relative;
-  display: grid;
-  grid-template-columns: 116px minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 16px;
   align-items: center;
+  text-align: center;
   padding: 18px;
   border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 .saas-home .hero-panel-top img {
-  width: 116px;
+  width: min(232px, 100%);
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   border: 1px solid rgba(255,255,255,.16);
   border-radius: 8px;
 }
@@ -1831,13 +1872,12 @@ button.btn { cursor: not-allowed; }
 
 .saas-home .product-metric-grid {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
+  display: flex;
+  gap: 0;
   background: rgba(255,255,255,.1);
 }
 
-.saas-home .product-metric-grid div {
+.saas-home .product-metric-grid > div {
   min-height: 118px;
   padding: 18px;
   background: rgba(8, 11, 18, .72);
@@ -1901,7 +1941,7 @@ button.btn { cursor: not-allowed; }
 }
 
 .saas-home .core-stack,
-.saas-home .audience-grid div {
+.saas-home .audience-grid > [class*="col"] > div {
   border: 1px solid rgba(255,255,255,.1);
   border-radius: 8px;
   background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
@@ -1910,14 +1950,11 @@ button.btn { cursor: not-allowed; }
 }
 
 .saas-home .core-stack {
-  display: grid;
-  grid-template-columns: minmax(150px, .2fr) minmax(0, 1fr);
-  gap: 18px;
-  align-items: center;
+  display: block;
   padding: 18px;
 }
 
-.saas-home .core-stack > span,
+.saas-home .core-stack > .row > span,
 .saas-home .audience-grid span {
   color: #9df2c9;
   font-size: 12px;
@@ -1946,13 +1983,12 @@ button.btn { cursor: not-allowed; }
 }
 
 .saas-home .audience-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  display: flex;
+  gap: 0;
   margin-top: 16px;
 }
 
-.saas-home .audience-grid div {
+.saas-home .audience-grid > [class*="col"] > div {
   padding: 20px;
 }
 
@@ -1966,15 +2002,14 @@ button.btn { cursor: not-allowed; }
 }
 
 .saas-home .service-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  display: flex;
+  gap: 0;
 }
 
 .saas-home .service-card,
 .saas-home .feature-project,
 .saas-home .process-step,
-.saas-home .capability-matrix div,
+.saas-home .capability-matrix > [class*="col"] > div,
 .saas-home .credibility-card,
 .saas-home .saas-cta {
   border: 1px solid rgba(255,255,255,.1);
@@ -1993,7 +2028,7 @@ button.btn { cursor: not-allowed; }
 .saas-home .service-card:hover,
 .saas-home .feature-project:hover,
 .saas-home .process-step:hover,
-.saas-home .capability-matrix div:hover {
+.saas-home .capability-matrix > [class*="col"] > div:hover {
   transform: translateY(-7px);
   border-color: rgba(255,255,255,.2);
   background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
@@ -2001,9 +2036,8 @@ button.btn { cursor: not-allowed; }
 }
 
 .saas-home .featured-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  display: flex;
+  gap: 0;
 }
 
 .saas-home .feature-project {
@@ -2075,9 +2109,8 @@ button.btn { cursor: not-allowed; }
 }
 
 .saas-home .process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
+  display: flex;
+  gap: 0;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.1);
   border-radius: 8px;
@@ -2102,12 +2135,11 @@ button.btn { cursor: not-allowed; }
 }
 
 .saas-home .capability-matrix {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
+  display: flex;
+  gap: 0;
 }
 
-.saas-home .capability-matrix div {
+.saas-home .capability-matrix > [class*="col"] > div {
   min-height: 190px;
   padding: 22px;
   transition: transform .26s var(--ease), border-color .26s var(--ease), background .26s var(--ease), box-shadow .26s var(--ease);
@@ -2126,9 +2158,8 @@ button.btn { cursor: not-allowed; }
 }
 
 .saas-home .profile-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .72fr);
-  gap: 24px;
+  display: flex;
+  gap: 0;
   align-items: stretch;
 }
 
@@ -2217,9 +2248,6 @@ button.btn { cursor: not-allowed; }
   .hero-grid,
   .scada-home .hero-grid,
   .premium-site .hero-grid,
-  .saas-home .saas-hero-grid,
-  .saas-home .core-stack,
-  .saas-home .profile-grid,
   .about-layout,
   .page-hero,
   .page-intro-grid,
@@ -2231,12 +2259,6 @@ button.btn { cursor: not-allowed; }
   .signal-row,
   .metrics,
   .grid-3,
-  .saas-home .credibility-snapshot,
-  .saas-home .audience-grid,
-  .saas-home .service-grid,
-  .saas-home .featured-grid,
-  .saas-home .process-grid,
-  .saas-home .capability-matrix,
   .workflow,
   .flow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2270,33 +2292,58 @@ button.btn { cursor: not-allowed; }
 @media (max-width: 720px) {
   .container { width: min(100% - 28px, var(--max)); }
 
+  .mobile-break {
+    display: block;
+  }
+
   .nav-inner {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 14px 0;
+  }
+
+  .nav-toggle {
+    display: grid;
+    margin-left: auto;
   }
 
   .nav-links {
     width: 100%;
-    overflow-x: auto;
-    padding-bottom: 3px;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 0;
+    padding: 0;
     border: 1px solid rgba(255,255,255,.1);
     border-radius: var(--radius);
     background: rgba(255,255,255,.045);
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
-    mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
-    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height .32s var(--ease), opacity .24s var(--ease), visibility .24s var(--ease), margin-top .24s var(--ease), padding .24s var(--ease);
+  }
+
+  .nav-links.is-open {
+    max-height: 380px;
+    margin-top: 14px;
+    padding: 10px;
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav-links a {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .nav-links::after {
-    content: "";
-    flex: 0 0 18px;
+    display: none;
+  }
+
+  .mobile-break {
+    display: block;
   }
 
   .hero { padding-top: 48px; }
@@ -2309,13 +2356,6 @@ button.btn { cursor: not-allowed; }
   .metrics,
   .grid-2,
   .grid-3,
-  .saas-home .credibility-snapshot,
-  .saas-home .audience-grid,
-  .saas-home .service-grid,
-  .saas-home .featured-grid,
-  .saas-home .process-grid,
-  .saas-home .capability-matrix,
-  .saas-home .profile-grid,
   .gallery-grid,
   .workflow,
   .flow {
@@ -2419,22 +2459,18 @@ button.btn { cursor: not-allowed; }
   }
 
   .saas-home .hero-panel-top {
-    grid-template-columns: 92px minmax(0, 1fr);
+    align-items: stretch;
   }
 
   .saas-home .hero-panel-top img {
-    width: 92px;
+    width: 100%;
   }
 
   .saas-home .hero-panel-top strong {
     font-size: 18px;
   }
 
-  .saas-home .product-metric-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .saas-home .credibility-snapshot div {
+  .saas-home .credibility-snapshot > div {
     min-height: auto;
   }
 
@@ -2458,7 +2494,7 @@ button.btn { cursor: not-allowed; }
 
   .saas-home .service-card,
   .saas-home .process-step,
-  .saas-home .capability-matrix div {
+  .saas-home .capability-matrix > [class*="col"] > div {
     min-height: auto;
   }
 
@@ -2472,4 +2508,2179 @@ button.btn { cursor: not-allowed; }
   .saas-home .saas-cta {
     padding: 26px;
   }
+}
+
+/* Workfolio-inspired light portfolio treatment */
+.saas-home {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --surface-strong: #ffffff;
+  --ink: #171717;
+  --muted: #686663;
+  --soft: #f3f0eb;
+  --line: rgba(23, 23, 23, .1);
+  --blue: #7c5cff;
+  --cyan: #17a2a4;
+  --green: #1aa56b;
+  --shadow: 0 24px 70px rgba(22, 22, 22, .08);
+  --shadow-hover: 0 30px 80px rgba(22, 22, 22, .12);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(124, 92, 255, .11), transparent 28rem),
+    radial-gradient(circle at 82% 4%, rgba(26, 165, 107, .09), transparent 25rem),
+    linear-gradient(180deg, #fbfaf7 0%, #f6f3ee 48%, #fbfaf7 100%);
+}
+
+.saas-home::before {
+  background: none;
+}
+
+.saas-home .site-nav {
+  border-bottom: 1px solid rgba(23, 23, 23, .08);
+  background: rgba(251, 250, 247, .86);
+  box-shadow: none;
+}
+
+.saas-home .brand {
+  color: #171717;
+  font-family: Poppins, Inter, sans-serif;
+}
+
+.saas-home .brand-mark {
+  border-radius: 999px;
+  background: #171717;
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(23, 23, 23, .12);
+}
+
+.saas-home .brand small,
+.saas-home .nav-links {
+  color: #6f6b66;
+}
+
+.saas-home .nav-links a {
+  border-radius: 999px;
+  color: #514d49;
+}
+
+.saas-home .nav-links a:hover,
+.saas-home .nav-links a.active,
+.saas-home .nav-links a[href="#services"],
+.saas-home .nav-links a[href="#projects"] {
+  color: #171717;
+  background: rgba(23, 23, 23, .06);
+}
+
+.saas-home .saas-hero {
+  min-height: auto;
+  padding: clamp(56px, 8vw, 96px) 0 clamp(48px, 7vw, 80px);
+}
+
+.saas-home .saas-hero .row {
+  row-gap: 24px;
+}
+
+.saas-home .hero-product-panel {
+  max-width: none;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.saas-home .hero-product-panel::before {
+  display: none;
+}
+
+.saas-home .hero-panel-top {
+  gap: 14px;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.saas-home .hero-panel-top img {
+  width: clamp(128px, 18vw, 184px);
+  border: 7px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 24px 70px rgba(23, 23, 23, .14);
+}
+
+.saas-home .hero-panel-top span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: 34px;
+  margin: 2px auto 0;
+  padding: 0 13px;
+  border: 1px solid rgba(23, 23, 23, .09);
+  border-radius: 999px;
+  background: #fff;
+  color: #3f3c38;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: none;
+  box-shadow: 0 12px 34px rgba(23, 23, 23, .06);
+}
+
+.saas-home .hero-panel-top span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #1aa56b;
+  box-shadow: 0 0 0 6px rgba(26, 165, 107, .12);
+}
+
+.saas-home .hero-panel-top strong {
+  margin-top: 10px;
+  color: #171717;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+}
+
+.saas-home .eyebrow {
+  margin-bottom: 18px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #7c5cff;
+  font-size: 12px;
+}
+
+.saas-home .eyebrow::before {
+  background: #7c5cff;
+  box-shadow: 0 0 0 6px rgba(124, 92, 255, .12);
+}
+
+.saas-home .saas-hero-copy h1 {
+  max-width: 1060px;
+  color: #171717;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(44px, 7vw, 88px);
+  line-height: 1.02;
+}
+
+.saas-home .lead,
+.saas-home .saas-hero-copy .lead {
+  max-width: 820px;
+  color: #65615c;
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 500;
+}
+
+.saas-home .btn {
+  min-height: 48px;
+  border-radius: 999px;
+  border-color: rgba(23, 23, 23, .13);
+  background: #fff;
+  color: #171717;
+  box-shadow: 0 14px 32px rgba(23, 23, 23, .07);
+}
+
+.saas-home .btn.primary {
+  border-color: #171717;
+  background: #171717;
+  color: #fff;
+}
+
+.saas-home .btn.subtle {
+  background: #f4f1ec;
+}
+
+.saas-home .credibility-snapshot {
+  max-width: 960px;
+  border-color: rgba(23, 23, 23, .08);
+  background: rgba(23, 23, 23, .08);
+  box-shadow: 0 18px 55px rgba(23, 23, 23, .06);
+}
+
+.saas-home .credibility-snapshot > div {
+  background: rgba(255, 255, 255, .92);
+}
+
+.saas-home .credibility-snapshot dt {
+  color: #8a8580;
+}
+
+.saas-home .credibility-snapshot dd,
+.saas-home .credibility-snapshot a {
+  color: #171717;
+}
+
+.saas-home .trust-strip span,
+.saas-home .stack-list span {
+  border-color: rgba(23, 23, 23, .09);
+  background: #fff;
+  color: #4b4743;
+  box-shadow: 0 10px 28px rgba(23, 23, 23, .04);
+}
+
+.saas-home .trust-strip i {
+  color: #1aa56b;
+}
+
+.saas-home .core-stack,
+.saas-home .audience-grid > [class*="col"] > div,
+.saas-home .service-card,
+.saas-home .feature-project,
+.saas-home .process-step,
+.saas-home .capability-matrix > [class*="col"] > div,
+.saas-home .credibility-card,
+.saas-home .saas-cta,
+.saas-home .profile-copy {
+  border: 1px solid rgba(23, 23, 23, .08);
+  background: rgba(255, 255, 255, .86);
+  box-shadow: 0 18px 50px rgba(23, 23, 23, .06);
+  backdrop-filter: blur(18px);
+}
+
+.saas-home .core-stack > .row > span,
+.saas-home .audience-grid span,
+.saas-home .kicker {
+  color: #7c5cff;
+}
+
+.saas-home h2,
+.saas-home h3,
+.saas-home .feature-body h3,
+.saas-home .capability-matrix span {
+  color: #171717;
+  font-family: Poppins, Inter, sans-serif;
+}
+
+.saas-home p,
+.saas-home .audience-grid p,
+.saas-home .project-detail-list p,
+.saas-home .saas-cta p {
+  color: #65615c;
+}
+
+.saas-home .service-grid {
+  gap: 0;
+}
+
+.saas-home .service-card {
+  min-height: 0;
+}
+
+.saas-home .service-card:hover,
+.saas-home .feature-project:hover,
+.saas-home .process-step:hover,
+.saas-home .capability-matrix > [class*="col"] > div:hover {
+  border-color: rgba(124, 92, 255, .22);
+  background: #fff;
+  box-shadow: var(--shadow-hover);
+}
+
+.saas-home .icon-box {
+  border-color: rgba(124, 92, 255, .12);
+  background: rgba(124, 92, 255, .09);
+  color: #7c5cff;
+}
+
+.saas-home .feature-media,
+.saas-home .feature-media.icon-media {
+  border-bottom-color: rgba(23, 23, 23, .08);
+  background: #f2eee7;
+  color: #7c5cff;
+}
+
+.saas-home .tag {
+  border-color: rgba(23, 23, 23, .09);
+  background: #f5f2ed;
+  color: #4b4743;
+}
+
+.saas-home .process-band {
+  border-block: 1px solid rgba(23, 23, 23, .08);
+  background: #f4f1ec;
+}
+
+.saas-home .process-grid {
+  border-color: rgba(23, 23, 23, .08);
+  background: rgba(23, 23, 23, .08);
+}
+
+.saas-home .process-step {
+  background: #fff;
+}
+
+.saas-home .process-step b,
+.saas-home .project-link-label,
+.saas-home .credibility-list i {
+  color: #7c5cff;
+}
+
+.saas-home .profile-band {
+  background: transparent;
+}
+
+.saas-home .credibility-card {
+  overflow: hidden;
+}
+
+.saas-home .credibility-list {
+  background: rgba(23, 23, 23, .08);
+}
+
+.saas-home .credibility-list span {
+  background: #fff;
+  color: #4b4743;
+}
+
+.saas-home .saas-cta {
+  background:
+    radial-gradient(circle at 84% 10%, rgba(124, 92, 255, .13), transparent 24rem),
+    #171717;
+}
+
+.saas-home .saas-cta h2,
+.saas-home .saas-cta .kicker {
+  color: #fff;
+}
+
+.saas-home .saas-cta p {
+  color: rgba(255, 255, 255, .72);
+}
+
+.saas-home .saas-cta .btn.primary {
+  border-color: #fff;
+  background: #fff;
+  color: #171717;
+}
+
+.saas-home .site-footer {
+  border-top-color: rgba(23, 23, 23, .08);
+  background: #171717;
+  color: rgba(255, 255, 255, .72);
+}
+
+@media (max-width: 720px) {
+  .saas-home .saas-hero-copy h1 {
+    font-size: 42px;
+  }
+
+  .saas-home .hero-product-panel {
+    max-width: 100%;
+  }
+
+  .saas-home .hero-panel-top {
+    align-items: center;
+  }
+
+  .saas-home .hero-panel-top img {
+    width: 156px;
+  }
+}
+
+/* World-class professional portfolio polish */
+html {
+  scroll-padding-top: 96px;
+}
+
+body.saas-home {
+  --bg: #f7f8fa;
+  --surface: rgba(255, 255, 255, .78);
+  --surface-strong: #ffffff;
+  --ink: #0b0d12;
+  --muted: #5f6672;
+  --soft: #edf0f4;
+  --line: rgba(12, 18, 28, .095);
+  --blue: #155eef;
+  --cyan: #0f9f9b;
+  --green: #16a163;
+  --violet: #6d5dfc;
+  --shadow: 0 24px 80px rgba(12, 18, 28, .08);
+  --shadow-hover: 0 34px 90px rgba(12, 18, 28, .13);
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .95) 0%, rgba(247, 248, 250, .96) 42%, #ffffff 100%),
+    linear-gradient(90deg, rgba(12, 18, 28, .035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(12, 18, 28, .035) 1px, transparent 1px);
+  background-size: auto, 56px 56px, 56px 56px;
+}
+
+body.saas-home::before {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .82), rgba(255, 255, 255, .34));
+}
+
+.saas-home .site-nav {
+  border-bottom: 1px solid rgba(12, 18, 28, .08);
+  background: rgba(255, 255, 255, .72);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .8), 0 18px 50px rgba(12, 18, 28, .045);
+  backdrop-filter: blur(24px) saturate(180%);
+}
+
+.saas-home .nav-inner {
+  min-height: 72px;
+}
+
+.saas-home .brand {
+  color: #0b0d12;
+  font-family: Poppins, Inter, sans-serif;
+}
+
+.saas-home .brand-mark {
+  border: 1px solid rgba(12, 18, 28, .08);
+  border-radius: 14px;
+  background: #0b0d12;
+  color: #fff;
+  box-shadow: 0 18px 44px rgba(12, 18, 28, .12);
+}
+
+.saas-home .brand small {
+  color: #717986;
+}
+
+.saas-home .nav-links {
+  gap: 6px;
+  color: #4e5662;
+}
+
+.saas-home .nav-links a {
+  min-height: 38px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: #46505d;
+  font-weight: 850;
+}
+
+.saas-home .nav-links a:hover,
+.saas-home .nav-links a.active,
+.saas-home .nav-links a[href="#services"],
+.saas-home .nav-links a[href="#projects"] {
+  border-color: rgba(12, 18, 28, .08);
+  background: rgba(255, 255, 255, .86);
+  color: #0b0d12;
+  box-shadow: 0 10px 28px rgba(12, 18, 28, .06);
+}
+
+.saas-home .saas-hero {
+  min-height: auto;
+  padding: clamp(64px, 9vw, 112px) 0 clamp(58px, 8vw, 96px);
+}
+
+.saas-home .saas-hero .row {
+  row-gap: 28px;
+}
+
+.saas-home .hero-product-panel {
+  max-width: 420px;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.saas-home .hero-product-panel::before {
+  display: none;
+}
+
+.saas-home .hero-panel-top {
+  gap: 14px;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.saas-home .hero-panel-top img {
+  width: clamp(150px, 17vw, 210px);
+  border: 8px solid rgba(255, 255, 255, .92);
+  border-radius: 32px;
+  object-position: center 15%;
+  box-shadow: 0 28px 80px rgba(12, 18, 28, .14), inset 0 0 0 1px rgba(255, 255, 255, .7);
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-radius .45s var(--ease);
+}
+
+.saas-home .hero-product-panel:hover .hero-panel-top img {
+  border-radius: 42px;
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 38px 95px rgba(12, 18, 28, .17);
+}
+
+.saas-home .hero-panel-top span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  min-height: 36px;
+  margin: 4px auto 0;
+  padding: 0 14px;
+  border: 1px solid rgba(12, 18, 28, .09);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .82);
+  color: #394150;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: none;
+  box-shadow: 0 14px 36px rgba(12, 18, 28, .06);
+  backdrop-filter: blur(18px) saturate(160%);
+}
+
+.saas-home .hero-panel-top span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #16a163;
+  box-shadow: 0 0 0 6px rgba(22, 161, 99, .13);
+}
+
+.saas-home .hero-panel-top strong {
+  max-width: 520px;
+  margin: 0 auto;
+  color: #0b0d12;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(21px, 2.2vw, 30px);
+  letter-spacing: 0;
+}
+
+.saas-home .eyebrow,
+.saas-home .kicker {
+  color: #155eef;
+  letter-spacing: .08em;
+}
+
+.saas-home .eyebrow {
+  margin-bottom: 20px;
+  border: 1px solid rgba(21, 94, 239, .12);
+  background: rgba(255, 255, 255, .72);
+  box-shadow: 0 14px 36px rgba(12, 18, 28, .055);
+  backdrop-filter: blur(16px);
+}
+
+.saas-home .eyebrow::before {
+  background: #155eef;
+  box-shadow: 0 0 0 6px rgba(21, 94, 239, .12);
+}
+
+.saas-home .saas-hero-copy {
+  text-align: center;
+}
+
+.saas-home .saas-hero-copy h1 {
+  max-width: 1100px;
+  margin-inline: auto;
+  color: #0b0d12;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(48px, 7.4vw, 98px);
+  font-weight: 800;
+  line-height: .98;
+  text-wrap: balance;
+}
+
+.saas-home .saas-hero-copy .lead {
+  max-width: 840px;
+  margin-inline: auto;
+  color: #5f6672;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 520;
+  line-height: 1.65;
+}
+
+.saas-home .hero-actions {
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.saas-home .btn {
+  min-height: 50px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border-color: rgba(12, 18, 28, .11);
+  background: rgba(255, 255, 255, .84);
+  color: #0b0d12;
+  box-shadow: 0 16px 38px rgba(12, 18, 28, .07);
+  backdrop-filter: blur(16px);
+}
+
+.saas-home .btn:hover {
+  transform: translateY(-4px);
+  border-color: rgba(21, 94, 239, .24);
+  box-shadow: var(--shadow-hover);
+}
+
+.saas-home .btn.primary {
+  border-color: #0b0d12;
+  background: #0b0d12;
+  color: #fff;
+}
+
+.saas-home .btn.subtle {
+  background: rgba(238, 241, 245, .76);
+}
+
+.saas-home .credibility-snapshot {
+  max-width: 980px;
+  margin: 26px auto 0;
+  border-color: rgba(12, 18, 28, .085);
+  background: rgba(12, 18, 28, .075);
+  box-shadow: 0 18px 60px rgba(12, 18, 28, .06);
+}
+
+.saas-home .credibility-snapshot > div {
+  background: rgba(255, 255, 255, .82);
+  backdrop-filter: blur(16px) saturate(160%);
+}
+
+.saas-home .credibility-snapshot dt {
+  color: #7a8290;
+}
+
+.saas-home .credibility-snapshot dd,
+.saas-home .credibility-snapshot a {
+  color: #0b0d12;
+}
+
+.saas-home .trust-strip {
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.saas-home .trust-strip span,
+.saas-home .stack-list span,
+.saas-home .tag {
+  border-color: rgba(12, 18, 28, .085);
+  background: rgba(255, 255, 255, .78);
+  color: #48515e;
+  box-shadow: 0 10px 30px rgba(12, 18, 28, .045);
+  backdrop-filter: blur(16px);
+}
+
+.saas-home .trust-strip i,
+.saas-home .credibility-list i {
+  color: #16a163;
+}
+
+.saas-home .section,
+.saas-home .premium-site .section {
+  padding-block: clamp(72px, 9vw, 112px);
+}
+
+.saas-home .section-head {
+  align-items: end;
+  margin-bottom: 38px;
+}
+
+.saas-home h2,
+.saas-home h3,
+.saas-home .feature-body h3,
+.saas-home .capability-matrix span {
+  color: #0b0d12;
+  font-family: Poppins, Inter, sans-serif;
+}
+
+.saas-home h2 {
+  font-size: clamp(34px, 4.6vw, 58px);
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.saas-home p,
+.saas-home .section-copy,
+.saas-home .audience-grid p,
+.saas-home .project-detail-list p,
+.saas-home .saas-cta p {
+  color: #5f6672;
+}
+
+.saas-home .core-stack,
+.saas-home .audience-grid > [class*="col"] > div,
+.saas-home .service-card,
+.saas-home .feature-project,
+.saas-home .process-step,
+.saas-home .capability-matrix > [class*="col"] > div,
+.saas-home .profile-copy,
+.saas-home .credibility-card {
+  border: 1px solid rgba(255, 255, 255, .72);
+  background: rgba(255, 255, 255, .72);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(22px) saturate(170%);
+}
+
+.saas-home .core-stack {
+  padding: 20px;
+}
+
+.saas-home .core-stack > .row > span,
+.saas-home .audience-grid span {
+  color: #155eef;
+}
+
+.saas-home .service-card,
+.saas-home .capability-matrix > [class*="col"] > div {
+  min-height: 0;
+}
+
+.saas-home .service-card:hover,
+.saas-home .feature-project:hover,
+.saas-home .process-step:hover,
+.saas-home .capability-matrix > [class*="col"] > div:hover,
+.saas-home .audience-grid > [class*="col"] > div:hover {
+  transform: translateY(-8px);
+  border-color: rgba(21, 94, 239, .18);
+  background: rgba(255, 255, 255, .9);
+  box-shadow: var(--shadow-hover);
+}
+
+.saas-home .icon-box {
+  border: 1px solid rgba(21, 94, 239, .12);
+  background: rgba(21, 94, 239, .08);
+  color: #155eef;
+}
+
+.saas-home .feature-media,
+.saas-home .feature-media.icon-media {
+  border-bottom-color: rgba(12, 18, 28, .08);
+  background: #eef1f5;
+  color: #155eef;
+}
+
+.saas-home .feature-media img {
+  transition: transform .55s var(--ease), filter .55s var(--ease);
+}
+
+.saas-home .feature-project:hover .feature-media img {
+  transform: scale(1.045);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.saas-home .project-detail-list strong,
+.saas-home .project-link-label,
+.saas-home .process-step b {
+  color: #155eef;
+}
+
+.saas-home .process-band {
+  border-block: 1px solid rgba(12, 18, 28, .08);
+  background: rgba(238, 241, 245, .58);
+}
+
+.saas-home .process-grid {
+  border-color: rgba(12, 18, 28, .08);
+  background: rgba(12, 18, 28, .07);
+}
+
+.saas-home .process-step {
+  background: rgba(255, 255, 255, .82);
+}
+
+.saas-home .profile-band {
+  background: transparent;
+}
+
+.saas-home .profile-copy {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .86), rgba(255, 255, 255, .66)),
+    rgba(255, 255, 255, .72);
+}
+
+.saas-home .credibility-card {
+  overflow: hidden;
+}
+
+.saas-home .credibility-list {
+  background: rgba(12, 18, 28, .075);
+}
+
+.saas-home .credibility-list span {
+  background: rgba(255, 255, 255, .86);
+  color: #48515e;
+}
+
+.saas-home .saas-cta {
+  border: 1px solid rgba(12, 18, 28, .08);
+  background:
+    linear-gradient(135deg, #0b0d12, #20242d);
+  box-shadow: 0 34px 100px rgba(12, 18, 28, .18);
+}
+
+.saas-home .saas-cta h2,
+.saas-home .saas-cta .kicker {
+  color: #fff;
+}
+
+.saas-home .saas-cta p {
+  color: rgba(255, 255, 255, .72);
+}
+
+.saas-home .saas-cta .btn.primary {
+  border-color: #fff;
+  background: #fff;
+  color: #0b0d12;
+}
+
+.saas-home .site-footer {
+  border-top-color: rgba(12, 18, 28, .08);
+  background: #0b0d12;
+  color: rgba(255, 255, 255, .72);
+}
+
+.saas-home .reveal {
+  will-change: transform, opacity;
+}
+
+.js .saas-home .reveal {
+  transform: translateY(24px) scale(.985);
+  transition: opacity .85s var(--ease), transform .85s var(--ease);
+}
+
+.js .saas-home .reveal.in-view,
+.saas-home .reveal.in-view {
+  transform: translateY(0) scale(1);
+}
+
+@media (max-width: 980px) {
+  .saas-home .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 720px) {
+  body.saas-home {
+    background-size: auto, 42px 42px, 42px 42px;
+  }
+
+  .saas-home .saas-hero {
+    padding-top: 48px;
+  }
+
+  .saas-home .saas-hero-copy h1 {
+    font-size: clamp(40px, 13vw, 54px);
+  }
+
+  .saas-home .hero-panel-top img {
+    width: 156px;
+    border-radius: 28px;
+  }
+
+  .saas-home .credibility-snapshot {
+    max-width: 100%;
+  }
+}
+
+/* Blue-dominant premium system */
+body.saas-home {
+  --bg: #06163d;
+  --surface: rgba(255, 255, 255, .9);
+  --surface-strong: #ffffff;
+  --ink: #07111f;
+  --muted: #516070;
+  --soft: rgba(255, 255, 255, .12);
+  --line: rgba(255, 255, 255, .2);
+  --blue: #69a6ff;
+  --cyan: #77e4ff;
+  --green: #7cf7bd;
+  --violet: #aab7ff;
+  --shadow: 0 30px 90px rgba(0, 23, 84, .26);
+  --shadow-hover: 0 38px 110px rgba(15, 72, 184, .34);
+  color: #f7fbff;
+  background:
+    radial-gradient(circle at 50% -8%, rgba(119, 228, 255, .34), transparent 30rem),
+    radial-gradient(circle at 15% 18%, rgba(105, 166, 255, .38), transparent 34rem),
+    radial-gradient(circle at 88% 12%, rgba(170, 183, 255, .24), transparent 28rem),
+    linear-gradient(180deg, #06163d 0%, #0a2f78 46%, #071b4f 100%);
+  background-size: auto;
+}
+
+body.saas-home::before {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, .05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(6, 22, 61, .12), rgba(6, 22, 61, .48));
+  background-size: 64px 64px, 64px 64px, auto;
+}
+
+.saas-home .site-nav {
+  border-bottom: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(4, 20, 58, .72);
+  box-shadow: 0 18px 60px rgba(0, 18, 62, .22);
+  backdrop-filter: blur(24px) saturate(170%);
+}
+
+.saas-home .brand {
+  color: #fff;
+}
+
+.saas-home .brand small {
+  color: rgba(235, 246, 255, .7);
+}
+
+.saas-home .brand-mark {
+  border-color: rgba(255, 255, 255, .22);
+  background: #fff;
+  color: #0a2f78;
+  box-shadow: 0 18px 44px rgba(0, 19, 70, .26);
+}
+
+.saas-home .nav-links {
+  color: rgba(235, 246, 255, .82);
+}
+
+.saas-home .nav-links a {
+  color: rgba(235, 246, 255, .82);
+}
+
+.saas-home .nav-links a:hover,
+.saas-home .nav-links a.active,
+.saas-home .nav-links a[href="#services"],
+.saas-home .nav-links a[href="#projects"] {
+  border-color: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(0, 20, 74, .18);
+}
+
+.saas-home .nav-toggle {
+  border-color: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(0, 20, 74, .16);
+  backdrop-filter: blur(16px);
+}
+
+.saas-home .nav-toggle:hover {
+  background: rgba(255, 255, 255, .18);
+}
+
+.saas-home .page-main {
+  padding: clamp(64px, 8vw, 96px) 0;
+}
+
+.saas-home .page-intro,
+.saas-home .page-intro-grid {
+  position: relative;
+  margin-bottom: clamp(34px, 5vw, 56px);
+}
+
+.saas-home .page-intro h1,
+.saas-home .page-intro-grid h1,
+.saas-home .saas-hero-copy h1 {
+  color: #fff;
+  text-shadow: 0 20px 70px rgba(0, 18, 62, .28);
+}
+
+.saas-home .page-intro .lead,
+.saas-home .page-intro-grid .lead,
+.saas-home .saas-hero-copy .lead {
+  color: rgba(235, 246, 255, .78);
+}
+
+.saas-home .eyebrow,
+.saas-home .kicker {
+  color: #a9d2ff;
+}
+
+.saas-home .eyebrow {
+  border-color: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .12);
+  color: #d9edff;
+}
+
+.saas-home .eyebrow::before {
+  background: #77e4ff;
+  box-shadow: 0 0 0 6px rgba(119, 228, 255, .16);
+}
+
+.saas-home .hero-panel-top strong {
+  color: #fff;
+}
+
+.saas-home .hero-panel-top span {
+  border-color: rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .14);
+  color: #ecf7ff;
+  box-shadow: 0 18px 54px rgba(0, 18, 62, .2);
+}
+
+.saas-home .hero-panel-top img {
+  border-color: rgba(255, 255, 255, .88);
+  box-shadow: 0 34px 100px rgba(0, 18, 62, .32);
+}
+
+.saas-home .btn {
+  border-color: rgba(255, 255, 255, .24);
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  box-shadow: 0 18px 48px rgba(0, 18, 62, .2);
+}
+
+.saas-home .btn.primary {
+  border-color: #fff;
+  background: #fff;
+  color: #0a2f78;
+}
+
+.saas-home .btn.subtle {
+  background: rgba(255, 255, 255, .1);
+}
+
+.saas-home .credibility-snapshot {
+  border-color: rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .16);
+  box-shadow: 0 24px 80px rgba(0, 18, 62, .24);
+}
+
+.saas-home .credibility-snapshot > div {
+  background: rgba(255, 255, 255, .9);
+}
+
+.saas-home .credibility-snapshot dt {
+  color: #55708e;
+}
+
+.saas-home .credibility-snapshot dd,
+.saas-home .credibility-snapshot a {
+  color: #07111f;
+}
+
+.saas-home .trust-strip span,
+.saas-home .stack-list span,
+.saas-home .tag {
+  border-color: rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .13);
+  color: #f2f8ff;
+  box-shadow: 0 14px 38px rgba(0, 18, 62, .14);
+}
+
+.saas-home .core-stack,
+.saas-home .audience-grid > [class*="col"] > div,
+.saas-home .service-card,
+.saas-home .feature-project,
+.saas-home .process-step,
+.saas-home .capability-matrix > [class*="col"] > div,
+.saas-home .profile-copy,
+.saas-home .credibility-card,
+.saas-home .motion-card,
+.saas-home .project-card,
+.saas-home .note-card,
+.saas-home .contact-shell,
+.saas-home .card,
+.saas-home .contact-method {
+  border: 1px solid rgba(255, 255, 255, .24);
+  background: rgba(255, 255, 255, .9);
+  color: #07111f;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(22px) saturate(165%);
+}
+
+.saas-home .core-stack:hover,
+.saas-home .audience-grid > [class*="col"] > div:hover,
+.saas-home .service-card:hover,
+.saas-home .feature-project:hover,
+.saas-home .process-step:hover,
+.saas-home .capability-matrix > [class*="col"] > div:hover,
+.saas-home .project-card:hover,
+.saas-home .note-card:hover,
+.saas-home .contact-method:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, .44);
+  background: #fff;
+  box-shadow: var(--shadow-hover);
+}
+
+.saas-home .card .kicker,
+.saas-home .note-card .kicker,
+.saas-home .core-stack > .row > span,
+.saas-home .audience-grid span,
+.saas-home .project-link-label,
+.saas-home .process-step b {
+  color: #155eef;
+}
+
+.saas-home .card h2,
+.saas-home .note-card h2,
+.saas-home .project-card h2,
+.saas-home .motion-card strong,
+.saas-home .service-card h3,
+.saas-home .feature-body h3,
+.saas-home .process-step h3,
+.saas-home .capability-matrix span,
+.saas-home .profile-copy h2 {
+  color: #07111f;
+}
+
+.saas-home .card p,
+.saas-home .note-card p,
+.saas-home .project-card p,
+.saas-home .motion-card span,
+.saas-home .audience-grid p,
+.saas-home .service-card p,
+.saas-home .feature-body p,
+.saas-home .process-step p,
+.saas-home .capability-matrix p,
+.saas-home .profile-copy p,
+.saas-home .contact-method span {
+  color: #516070;
+}
+
+.saas-home .project-media,
+.saas-home .feature-media,
+.saas-home .feature-media.icon-media {
+  border-bottom-color: rgba(7, 17, 31, .08);
+  background:
+    linear-gradient(135deg, rgba(21, 94, 239, .1), rgba(119, 228, 255, .16)),
+    #eef6ff;
+  color: #155eef;
+}
+
+.saas-home .project-media img,
+.saas-home .motion-card img,
+.saas-home .feature-media img {
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.saas-home input,
+.saas-home textarea {
+  border-color: rgba(7, 17, 31, .12);
+  background: rgba(243, 248, 255, .9);
+  color: #516070;
+}
+
+.saas-home .process-band {
+  border-block: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .08);
+}
+
+.saas-home .process-grid {
+  border-color: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .18);
+}
+
+.saas-home .saas-cta {
+  border-color: rgba(255, 255, 255, .22);
+  background:
+    radial-gradient(circle at 82% 10%, rgba(119, 228, 255, .22), transparent 24rem),
+    linear-gradient(135deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, .08));
+  box-shadow: 0 34px 110px rgba(0, 18, 62, .24);
+}
+
+.saas-home .saas-cta h2,
+.saas-home .saas-cta .kicker,
+.saas-home .saas-cta p {
+  color: #fff;
+}
+
+.saas-home .saas-cta .btn.primary {
+  border-color: #fff;
+  background: #fff;
+  color: #0a2f78;
+}
+
+.saas-home .site-footer {
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(4, 20, 58, .82);
+  color: rgba(235, 246, 255, .74);
+  backdrop-filter: blur(18px);
+}
+
+@media (max-width: 720px) {
+  body.saas-home::before {
+    background-size: 44px 44px, 44px 44px, auto;
+  }
+
+  .saas-home .page-main {
+    padding-top: 48px;
+  }
+}
+
+/* Cross-page UI/UX refinement */
+.saas-home .page-main > .container {
+  position: relative;
+}
+
+.saas-home .page-intro,
+.saas-home .page-intro-grid,
+.saas-home .page-hero {
+  padding: clamp(28px, 4vw, 46px);
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .07));
+  box-shadow: 0 28px 90px rgba(0, 18, 62, .22);
+  backdrop-filter: blur(24px) saturate(160%);
+}
+
+.saas-home .page-intro {
+  max-width: 980px;
+}
+
+.saas-home .page-intro-grid,
+.saas-home .page-hero {
+  align-items: center;
+}
+
+.saas-home .page-intro h1,
+.saas-home .page-intro-grid h1,
+.saas-home .page-hero h1 {
+  max-width: 980px;
+  margin: 10px 0 18px;
+  color: #fff;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.saas-home .page-hero .lead,
+.saas-home .page-intro .lead,
+.saas-home .page-intro-grid .lead {
+  max-width: 780px;
+  color: rgba(235, 246, 255, .82);
+}
+
+.saas-home .page-hero > .card,
+.saas-home .page-intro-grid > .motion-card {
+  align-self: stretch;
+}
+
+.saas-home .motion-card {
+  overflow: hidden;
+}
+
+.saas-home .motion-card img,
+.saas-home .motion-thumb img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.saas-home .motion-card div,
+.saas-home .motion-thumb {
+  border-color: rgba(7, 17, 31, .08);
+}
+
+.saas-home .grid-2,
+.saas-home .grid-3,
+.saas-home .gallery-grid,
+.saas-home .metrics {
+  gap: 18px;
+}
+
+.saas-home .project-card,
+.saas-home .note-card,
+.saas-home .card,
+.saas-home .contact-method,
+.saas-home .media-card {
+  border-radius: 18px;
+}
+
+.saas-home .project-card,
+.saas-home .note-card,
+.saas-home .card {
+  transition: transform .32s var(--ease), box-shadow .32s var(--ease), border-color .32s var(--ease), background .32s var(--ease);
+}
+
+.saas-home .project-card:hover .project-media img,
+.saas-home .media-card:hover img {
+  transform: scale(1.035);
+}
+
+.saas-home .project-media,
+.saas-home .media-card {
+  overflow: hidden;
+}
+
+.saas-home .project-media img,
+.saas-home .case-image {
+  transition: transform .5s var(--ease), filter .5s var(--ease);
+}
+
+.saas-home .project-body h2,
+.saas-home .note-card h2 {
+  font-size: clamp(22px, 2.4vw, 28px);
+}
+
+.saas-home .contact-shell {
+  gap: 20px;
+  padding: 20px;
+}
+
+.saas-home .contact-method {
+  border-color: rgba(7, 17, 31, .08);
+  box-shadow: none;
+}
+
+.saas-home .contact-method:hover {
+  color: #07111f;
+}
+
+.saas-home .contact-method span:last-child {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.saas-home .form-grid input:disabled,
+.saas-home .form-grid textarea:disabled,
+.saas-home .form-grid button:disabled {
+  opacity: .72;
+}
+
+.saas-home .case-layout {
+  gap: 28px;
+}
+
+.saas-home .toc {
+  top: 102px;
+  border-radius: 18px;
+}
+
+.saas-home .toc a {
+  min-height: 40px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  color: #516070;
+  transition: background .22s var(--ease), color .22s var(--ease), transform .22s var(--ease);
+}
+
+.saas-home .toc a:hover {
+  background: rgba(21, 94, 239, .08);
+  color: #155eef;
+  transform: translateX(3px);
+}
+
+.saas-home .case-section {
+  margin-bottom: 24px;
+  padding: clamp(24px, 4vw, 36px);
+}
+
+.saas-home .case-section h2 {
+  margin: 8px 0 14px;
+}
+
+.saas-home .case-section ul {
+  color: #516070;
+}
+
+.saas-home .case-section li::marker {
+  color: #155eef;
+}
+
+.saas-home .flow,
+.saas-home .workflow {
+  border-color: rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .18);
+}
+
+.saas-home .flow span,
+.saas-home .workflow-step {
+  background: rgba(255, 255, 255, .92);
+  color: #07111f;
+}
+
+.saas-home .workflow-step p {
+  color: #516070;
+}
+
+.saas-home .media-card {
+  border-color: rgba(7, 17, 31, .08);
+  background: #fff;
+  box-shadow: 0 18px 54px rgba(0, 23, 84, .12);
+}
+
+.saas-home .case-image {
+  background: #eef6ff;
+}
+
+.saas-home .media-caption {
+  border-top-color: rgba(7, 17, 31, .08);
+  color: #516070;
+}
+
+.saas-home .contact-cta {
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 84% 10%, rgba(119, 228, 255, .22), transparent 24rem),
+    linear-gradient(135deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .08));
+  box-shadow: 0 34px 110px rgba(0, 18, 62, .24);
+}
+
+.saas-home .contact-cta h2,
+.saas-home .contact-cta .kicker,
+.saas-home .contact-cta p {
+  color: #fff;
+}
+
+.saas-home .contact-cta .btn {
+  border-color: #fff;
+  background: #fff;
+  color: #0a2f78;
+}
+
+.saas-home a:focus-visible,
+.saas-home button:focus-visible,
+.saas-home input:focus-visible,
+.saas-home textarea:focus-visible {
+  outline: 3px solid rgba(119, 228, 255, .82);
+  outline-offset: 4px;
+}
+
+@media (max-width: 980px) {
+  .saas-home .page-intro-grid,
+  .saas-home .page-hero,
+  .saas-home .case-layout,
+  .saas-home .contact-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .saas-home .toc {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .saas-home .page-intro,
+  .saas-home .page-intro-grid,
+  .saas-home .page-hero,
+  .saas-home .contact-shell {
+    padding: 22px;
+  }
+
+  .saas-home .page-intro h1,
+  .saas-home .page-intro-grid h1,
+  .saas-home .page-hero h1 {
+    font-size: clamp(38px, 12vw, 52px);
+  }
+
+  .saas-home .contact-method {
+    align-items: flex-start;
+  }
+
+  .saas-home .contact-method span:last-child {
+    text-align: left;
+  }
+
+  .saas-home .flow span,
+  .saas-home .workflow-step {
+    min-height: auto;
+  }
+}
+
+/* Contrast and readability fixes */
+.saas-home .hero-panel-top strong {
+  color: #fff;
+}
+
+.saas-home .core-stack .stack-list span,
+.saas-home .card .tag,
+.saas-home .project-card .tag,
+.saas-home .note-card .tag,
+.saas-home .feature-project .tag,
+.saas-home .profile-copy .tag,
+.saas-home .capability-matrix .tag {
+  border-color: rgba(7, 17, 31, .1);
+  background: #eef6ff;
+  color: #12315f;
+  box-shadow: none;
+}
+
+.saas-home .trust-strip span {
+  border-color: rgba(255, 255, 255, .24);
+  background: rgba(255, 255, 255, .14);
+  color: #f7fbff;
+}
+
+.saas-home .core-stack,
+.saas-home .audience-grid > [class*="col"] > div,
+.saas-home .service-card,
+.saas-home .feature-project,
+.saas-home .process-step,
+.saas-home .capability-matrix > [class*="col"] > div,
+.saas-home .profile-copy,
+.saas-home .credibility-card,
+.saas-home .motion-card,
+.saas-home .project-card,
+.saas-home .note-card,
+.saas-home .contact-shell,
+.saas-home .card,
+.saas-home .contact-method,
+.saas-home .media-card {
+  background: rgba(255, 255, 255, .96);
+  color: #07111f;
+}
+
+.saas-home .core-stack *,
+.saas-home .audience-grid > [class*="col"] > div *,
+.saas-home .service-card *,
+.saas-home .feature-project *,
+.saas-home .process-step *,
+.saas-home .capability-matrix > [class*="col"] > div *,
+.saas-home .profile-copy *,
+.saas-home .credibility-card *,
+.saas-home .motion-card *,
+.saas-home .project-card *,
+.saas-home .note-card *,
+.saas-home .contact-shell *,
+.saas-home .card *,
+.saas-home .contact-method *,
+.saas-home .media-card * {
+  text-shadow: none;
+}
+
+.saas-home .core-stack h1,
+.saas-home .core-stack h2,
+.saas-home .core-stack h3,
+.saas-home .audience-grid h1,
+.saas-home .audience-grid h2,
+.saas-home .audience-grid h3,
+.saas-home .service-card h1,
+.saas-home .service-card h2,
+.saas-home .service-card h3,
+.saas-home .feature-project h1,
+.saas-home .feature-project h2,
+.saas-home .feature-project h3,
+.saas-home .process-step h1,
+.saas-home .process-step h2,
+.saas-home .process-step h3,
+.saas-home .capability-matrix h1,
+.saas-home .capability-matrix h2,
+.saas-home .capability-matrix h3,
+.saas-home .profile-copy h1,
+.saas-home .profile-copy h2,
+.saas-home .profile-copy h3,
+.saas-home .project-card h1,
+.saas-home .project-card h2,
+.saas-home .project-card h3,
+.saas-home .note-card h1,
+.saas-home .note-card h2,
+.saas-home .note-card h3,
+.saas-home .contact-shell h1,
+.saas-home .contact-shell h2,
+.saas-home .contact-shell h3,
+.saas-home .card h1,
+.saas-home .card h2,
+.saas-home .card h3 {
+  color: #07111f;
+}
+
+.saas-home .core-stack p,
+.saas-home .audience-grid p,
+.saas-home .service-card p,
+.saas-home .feature-project p,
+.saas-home .process-step p,
+.saas-home .capability-matrix p,
+.saas-home .profile-copy p,
+.saas-home .project-card p,
+.saas-home .note-card p,
+.saas-home .contact-shell p,
+.saas-home .card p,
+.saas-home .media-caption,
+.saas-home .contact-method span {
+  color: #435266;
+}
+
+.saas-home .core-stack .kicker,
+.saas-home .core-stack > .row > span,
+.saas-home .audience-grid span,
+.saas-home .service-card .kicker,
+.saas-home .feature-project .kicker,
+.saas-home .process-step .kicker,
+.saas-home .process-step b,
+.saas-home .capability-matrix .kicker,
+.saas-home .profile-copy .kicker,
+.saas-home .project-card .kicker,
+.saas-home .note-card .kicker,
+.saas-home .contact-shell .kicker,
+.saas-home .card .kicker,
+.saas-home .project-link-label {
+  color: #155eef;
+}
+
+.saas-home .credibility-list span {
+  color: #24344c;
+}
+
+.saas-home .flow span,
+.saas-home .workflow-step {
+  color: #07111f;
+}
+
+.saas-home .workflow-step b {
+  color: #155eef;
+}
+
+.saas-home input,
+.saas-home textarea {
+  color: #24344c;
+}
+
+/* Reference-inspired one-page structure */
+.onepage-home .onepage-section {
+  position: relative;
+  padding: clamp(76px, 10vw, 124px) 0;
+}
+
+.onepage-home .light-panel {
+  background: rgba(255, 255, 255, .08);
+  border-block: 1px solid rgba(255, 255, 255, .16);
+}
+
+.onepage-home .onepage-hero {
+  padding: clamp(64px, 9vw, 110px) 0 clamp(70px, 10vw, 128px);
+}
+
+.onepage-home .onepage-avatar-wrap {
+  max-width: none;
+  margin-bottom: 14px;
+}
+
+.onepage-home .hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 38px;
+  margin: 4px auto 20px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .13);
+  color: #f7fbff;
+  font-size: 13px;
+  font-weight: 900;
+  box-shadow: 0 18px 54px rgba(0, 18, 62, .2);
+  backdrop-filter: blur(18px) saturate(160%);
+}
+
+.onepage-home .ping {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #7cf7bd;
+  box-shadow: 0 0 0 6px rgba(124, 247, 189, .14);
+}
+
+.onepage-home .hero-role {
+  margin: 4px 0 0;
+  color: rgba(235, 246, 255, .86);
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.onepage-home .hero-role + .hero-role {
+  margin-bottom: 18px;
+}
+
+.onepage-home .hero-title {
+  max-width: 980px;
+  margin-inline: auto;
+  margin-bottom: 24px;
+  color: #fff;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(48px, 6.2vw, 78px);
+  font-weight: 800;
+  line-height: .98;
+  text-wrap: balance;
+  text-shadow: 0 20px 70px rgba(0, 18, 62, .28);
+}
+
+.onepage-home .onepage-hero .lead {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.onepage-home .socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.onepage-home .socials a {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  font-size: 18px;
+  transition: transform .24s var(--ease), background .24s var(--ease), box-shadow .24s var(--ease);
+}
+
+.onepage-home .socials a:hover {
+  transform: translateY(-4px);
+  background: #fff;
+  color: #0a2f78;
+  box-shadow: 0 18px 44px rgba(0, 18, 62, .22);
+}
+
+.onepage-home .clients-strip {
+  padding-top: 0;
+}
+
+.onepage-home .clients-strip .eyebrow {
+  width: fit-content;
+  margin: 0 auto 22px;
+}
+
+.onepage-home .stack-logo-row span {
+  min-height: 64px;
+  display: grid;
+  place-items: center;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .94);
+  color: #12315f;
+  text-align: center;
+  font-weight: 900;
+  box-shadow: 0 18px 50px rgba(0, 18, 62, .16);
+}
+
+.onepage-home .section-title {
+  max-width: 820px;
+  margin: 0 auto clamp(30px, 5vw, 52px);
+  text-align: center;
+}
+
+.onepage-home .section-title h2 {
+  margin-bottom: 12px;
+  color: #fff;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(38px, 5.2vw, 68px);
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.onepage-home .section-title p {
+  margin: 0 auto;
+  color: rgba(235, 246, 255, .86);
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 620;
+}
+
+.onepage-home .story {
+  color: rgba(235, 246, 255, .88);
+  font-size: clamp(18px, 2vw, 23px);
+  font-weight: 520;
+}
+
+.onepage-home .counter,
+.onepage-home .intro-panel,
+.onepage-home .skills-animation,
+.onepage-home .timeline,
+.onepage-home .step,
+.onepage-home .quick-contact,
+.onepage-home .case {
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .96);
+  color: #07111f;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(22px) saturate(165%);
+}
+
+.onepage-home .counter {
+  height: 100%;
+  min-height: 168px;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  text-align: center;
+}
+
+.onepage-home .counter span {
+  color: #155eef;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.onepage-home .counter p,
+.onepage-home .intro-panel p,
+.onepage-home .timeline p,
+.onepage-home .step p,
+.onepage-home .case p {
+  color: #435266;
+}
+
+.onepage-home .service-rows {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .16);
+  box-shadow: var(--shadow);
+}
+
+.onepage-home .row-item {
+  min-height: 118px;
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr) 44px;
+  gap: 18px;
+  align-items: center;
+  padding: clamp(20px, 3vw, 30px);
+  border-bottom: 1px solid rgba(7, 17, 31, .08);
+  background: rgba(255, 255, 255, .96);
+  color: #07111f;
+  transition: transform .28s var(--ease), background .28s var(--ease), box-shadow .28s var(--ease);
+}
+
+.onepage-home .row-item:hover {
+  transform: translateX(6px);
+  background: #fff;
+  box-shadow: var(--shadow-hover);
+}
+
+.onepage-home .row-item .n {
+  color: #155eef;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.onepage-home .row-item h3,
+.onepage-home .intro-panel h3,
+.onepage-home .timeline h4,
+.onepage-home .step h3,
+.onepage-home .case h3,
+.onepage-home .cta-center h2 {
+  color: #07111f;
+  font-family: Poppins, Inter, sans-serif;
+}
+
+.onepage-home .row-item p {
+  margin-bottom: 0;
+  color: #435266;
+}
+
+.onepage-home .row-item > i {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #eef6ff;
+  color: #155eef;
+}
+
+.onepage-home .intro-panel,
+.onepage-home .skills-animation {
+  padding: clamp(24px, 4vw, 36px);
+}
+
+.onepage-home .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.onepage-home .tags span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #eef6ff;
+  color: #12315f;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.onepage-home .skill-line + .skill-line {
+  margin-top: 20px;
+}
+
+.onepage-home .skill-line > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+  color: #07111f;
+  font-weight: 900;
+}
+
+.onepage-home .skill-line i {
+  color: #155eef;
+  font-style: normal;
+}
+
+.onepage-home .skill-line .bar {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dbeafe;
+}
+
+.onepage-home .skill-line b {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #155eef, #77e4ff);
+}
+
+.onepage-home .col-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.onepage-home .col-head i {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .14);
+}
+
+.onepage-home .col-head h3 {
+  margin: 0;
+  color: #fff;
+  font-family: Poppins, Inter, sans-serif;
+}
+
+.onepage-home .timeline {
+  padding: clamp(24px, 4vw, 34px);
+}
+
+.onepage-home .timeline .item {
+  position: relative;
+  padding-left: 24px;
+}
+
+.onepage-home .timeline .item + .item {
+  margin-top: 26px;
+}
+
+.onepage-home .timeline .item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #155eef;
+  box-shadow: 0 0 0 6px rgba(21, 94, 239, .12);
+}
+
+.onepage-home .timeline .year,
+.onepage-home .timeline .org,
+.onepage-home .case .cat {
+  display: block;
+  color: #155eef;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.onepage-home .cases {
+  display: grid;
+  gap: 24px;
+}
+
+.onepage-home .case {
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.onepage-home .shot {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(21, 94, 239, .1), rgba(119, 228, 255, .16)), #eef6ff;
+  color: #155eef;
+  font-size: 64px;
+}
+
+.onepage-home .shot img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  transition: transform .5s var(--ease);
+}
+
+.onepage-home .shot:hover img {
+  transform: scale(1.04);
+}
+
+.onepage-home .case .copy {
+  padding: clamp(8px, 2vw, 22px);
+}
+
+.onepage-home .case .more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: #155eef;
+  font-weight: 900;
+}
+
+.onepage-home .muted-more {
+  color: #66758a;
+}
+
+.onepage-home .step {
+  min-height: 260px;
+  padding: 26px;
+  text-align: center;
+}
+
+.onepage-home .step .num {
+  display: block;
+  color: #155eef;
+  font-family: Poppins, Inter, sans-serif;
+  font-weight: 900;
+}
+
+.onepage-home .step i {
+  display: block;
+  margin: 24px 0 18px;
+  color: #155eef;
+  font-size: 34px;
+}
+
+.onepage-home .step p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.onepage-home .cta-section {
+  padding-block: clamp(64px, 8vw, 96px);
+}
+
+.onepage-home .cta-center {
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid rgba(119, 228, 255, .28);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(119, 228, 255, .28), transparent 22rem),
+    linear-gradient(135deg, rgba(21, 94, 239, .92), rgba(6, 22, 61, .9));
+  box-shadow: 0 34px 110px rgba(0, 18, 62, .24);
+  backdrop-filter: blur(22px) saturate(165%);
+}
+
+.onepage-home .cta-center h2 {
+  color: #fff;
+}
+
+.onepage-home .cta-center .kicker {
+  color: #9ee7ff;
+}
+
+.onepage-home .cta-center p,
+.onepage-home .cta-center .note {
+  color: rgba(235, 246, 255, .82);
+}
+
+.onepage-home .cta-center .note {
+  display: block;
+  margin-top: 16px;
+  font-weight: 800;
+}
+
+.onepage-home .quick-contact {
+  display: grid;
+  gap: 12px;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.onepage-home .quick-contact a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #eef6ff;
+  color: #12315f;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+  transition: transform .24s var(--ease), background .24s var(--ease);
+}
+
+.onepage-home .quick-contact a:hover {
+  transform: translateX(4px);
+  background: #dbeafe;
+}
+
+@media (max-width: 720px) {
+  .onepage-home .row-item {
+    grid-template-columns: 1fr 38px;
+  }
+
+  .onepage-home .row-item .n {
+    grid-column: 1 / -1;
+  }
+
+  .onepage-home .shot,
+  .onepage-home .shot img {
+    min-height: 230px;
+    height: 230px;
+  }
+
+  .onepage-home .hero-title {
+    max-width: 360px;
+    font-size: clamp(38px, 11vw, 46px);
+  }
+
+  .onepage-home .step {
+    min-height: 220px;
+    padding: 18px 12px;
+  }
+
+  .onepage-home .step i {
+    margin: 16px 0 12px;
+    font-size: 28px;
+  }
+
+  .onepage-home .step h3 {
+    font-size: 18px;
+  }
+
+  .onepage-home .step p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+}
+
+.saas-home .section-head h2 {
+  color: #fff;
+  text-shadow: 0 18px 56px rgba(0, 18, 62, .28);
+}
+
+.saas-home .section-head .section-copy,
+.saas-home .section-copy {
+  color: rgba(235, 246, 255, .86);
+  text-shadow: 0 12px 38px rgba(0, 18, 62, .22);
+}
+
+.saas-home .section-head .kicker {
+  color: #c8e3ff;
+}
+
+.saas-home .profile-copy .kicker,
+.saas-home .profile-copy h2,
+.saas-home .profile-copy p,
+.saas-home .saas-cta .kicker,
+.saas-home .saas-cta h2,
+.saas-home .saas-cta p,
+.saas-home .contact-cta .kicker,
+.saas-home .contact-cta h2,
+.saas-home .contact-cta p {
+  text-shadow: none;
+}
+
+.site-footer,
+.footer-inner {
+  text-align: center;
+}
+
+.footer-inner {
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }

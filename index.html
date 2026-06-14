@@ -7,291 +7,250 @@
   <meta name="description" content="Portfolio and services homepage for Ts Muhammad Nazur Syahmi, a Hardware Developer (Electronic) building embedded systems, IoT products, PCB prototypes, firmware, dashboards, and product documentation." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body class="premium-site premium-home saas-home">
+<body class="premium-site premium-home saas-home onepage-home">
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Ts Muhammad Nazur Syahmi home">
+      <a class="brand" href="#hero" aria-label="Ts Muhammad Nazur Syahmi home">
         <span class="brand-mark">NS</span>
         <span>Ts Muhammad Nazur Syahmi<small>Hardware Developer (Electronic)</small></span>
       </a>
-      <div class="nav-links">
-        <a class="active" href="index.html"><i class="bi bi-house"></i>Home</a>
+      <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="nav-links" id="site-menu">
+        <a class="active" href="#hero"><i class="bi bi-house"></i>Home</a>
+        <a href="#about"><i class="bi bi-person"></i>About</a>
         <a href="#services"><i class="bi bi-grid"></i>Services</a>
-        <a href="#projects"><i class="bi bi-kanban"></i>Projects</a>
-        <a href="notes.html"><i class="bi bi-journal-text"></i>Notes</a>
-        <a href="contact.html"><i class="bi bi-send"></i>Contact</a>
+        <a href="#skills"><i class="bi bi-tools"></i>Skills</a>
+        <a href="#experience"><i class="bi bi-briefcase"></i>Experience</a>
+        <a href="#portfolio"><i class="bi bi-kanban"></i>Portfolio</a>
+        <a href="#contact"><i class="bi bi-send"></i>Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <header class="hero saas-hero">
-      <div class="container saas-hero-grid">
-        <div class="saas-hero-copy reveal">
-          <span class="eyebrow">Hardware + Software + Product Development</span>
-          <h1>I build connected products from prototype to usable system.</h1>
-          <p class="lead">
-            I help teams and founders turn electronics ideas into reliable hardware, firmware,
-            IoT workflows, dashboards, and product documentation ready for real-world testing.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="contact.html"><i class="bi bi-send"></i>Contact Me</a>
-            <a class="btn" href="projects.html"><i class="bi bi-kanban"></i>View Projects</a>
-            <a class="btn subtle" href="doc/CV_Nazur_Syahmi_V2.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-arrow-down"></i>Download Resume</a>
-          </div>
-          <dl class="credibility-snapshot" aria-label="Credibility snapshot">
-            <div>
-              <dt>Name</dt>
-              <dd>Nazur Syahmi</dd>
-            </div>
-            <div>
-              <dt>Role</dt>
-              <dd>Embedded Systems / IoT Product Developer</dd>
-            </div>
-            <div>
-              <dt>Focus</dt>
-              <dd>Hardware + Firmware + Dashboard Integration</dd>
-            </div>
-            <div>
-              <dt>Availability</dt>
-              <dd>Portfolio + Services</dd>
-            </div>
-            <div>
-              <dt>Resume</dt>
-              <dd><a href="doc/CV_Nazur_Syahmi_V2.pdf" target="_blank" rel="noopener">CV PDF</a></dd>
-            </div>
-          </dl>
-          <div class="trust-strip" aria-label="Portfolio proof points">
-            <span><i class="bi bi-check2-circle"></i> Embedded systems</span>
-            <span><i class="bi bi-check2-circle"></i> PCB prototypes</span>
-            <span><i class="bi bi-check2-circle"></i> Firmware and dashboards</span>
-          </div>
-        </div>
-
-        <aside class="hero-product-panel reveal" aria-label="Portfolio overview panel">
-          <div class="hero-panel-top">
-            <img src="assets/images/nazursyahmi.jpg" alt="Ts Muhammad Nazur Syahmi">
-            <div>
-              <span>Available for selected work</span>
-              <strong>Hardware Developer (Electronic)</strong>
-            </div>
-          </div>
-          <div class="product-metric-grid">
-            <div><span>Core</span><strong>PCB</strong><small>Design and bring-up</small></div>
-            <div><span>Build</span><strong>FW</strong><small>Device logic</small></div>
-            <div><span>Connect</span><strong>IoT</strong><small>Telemetry flows</small></div>
-            <div><span>Deliver</span><strong>Docs</strong><small>Clear handover</small></div>
-          </div>
-          <div class="mini-dashboard">
-            <div class="mini-dashboard-head">
-              <span>Product readiness</span>
-              <b>Prototype to pilot</b>
-            </div>
-            <div class="readiness-bars" aria-hidden="true">
-              <span style="--level: 86%"></span>
-              <span style="--level: 72%"></span>
-              <span style="--level: 94%"></span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </header>
-
-    <section class="stack-strip-section" aria-label="Core stack and audience fit">
+    <section class="hero saas-hero onepage-hero" id="hero">
       <div class="container">
-        <div class="core-stack reveal">
-          <span>Core Stack / Tools</span>
-          <div class="stack-list" aria-label="Core stack and tools">
-            <span>ESP32</span>
-            <span>Sensors</span>
-            <span>MQTT</span>
-            <span>GSM / Cellular</span>
-            <span>PCB Prototyping</span>
-            <span>Firmware</span>
-            <span>Web Dashboards</span>
-            <span>Documentation</span>
-          </div>
-        </div>
-        <div class="audience-grid reveal">
-          <div>
-            <span>For hiring managers</span>
-            <p>Embedded and IoT engineering capability across build, debug, integration, and documentation.</p>
-          </div>
-          <div>
-            <span>For founders and clients</span>
-            <p>Prototype-to-product support across hardware, firmware, dashboards, and practical handover notes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section saas-section" id="services">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="kicker">Services</span>
-            <h2>Engineering support for connected product development.</h2>
-          </div>
-          <p class="section-copy">Focused help across the layers that usually decide whether a prototype becomes dependable.</p>
-        </div>
-
-        <div class="service-grid">
-          <article class="service-card reveal">
-            <div class="icon-box"><i class="bi bi-cpu"></i></div>
-            <h3>Embedded Systems Development</h3>
-            <p>Device behavior, sensor interfaces, control logic, state handling, and practical debugging for MCU-based products.</p>
-          </article>
-          <article class="service-card reveal">
-            <div class="icon-box"><i class="bi bi-broadcast-pin"></i></div>
-            <h3>IoT Product Development</h3>
-            <p>Telemetry pipelines, wireless communication planning, device-to-cloud workflows, and monitoring experiences.</p>
-          </article>
-          <article class="service-card reveal">
-            <div class="icon-box"><i class="bi bi-motherboard"></i></div>
-            <h3>PCB / Hardware Prototyping</h3>
-            <p>Schematic review, board-level thinking, prototype readiness, bring-up support, validation, and iteration planning.</p>
-          </article>
-          <article class="service-card reveal">
-            <div class="icon-box"><i class="bi bi-window-sidebar"></i></div>
-            <h3>Firmware + Dashboard Integration</h3>
-            <p>Connect device data to useful dashboards, logs, backend endpoints, and product-facing visibility.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section saas-section" id="projects">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="kicker">Featured Projects</span>
-            <h2>Selected work with practical product outcomes.</h2>
-          </div>
-          <p class="section-copy">A short view of the kind of systems I design, connect, test, and document.</p>
-        </div>
-
-        <div class="featured-grid">
-          <a class="feature-project reveal" href="projects/smart-iot-datalogger.html">
-            <div class="feature-media"><img src="assets/images/smart-iot-datalogger/datalogger1.png" alt="Smart IoT Datalogger prototype"></div>
-            <div class="feature-body">
-              <span>IoT device platform</span>
-              <h3>Smart IoT Datalogger</h3>
-              <p>Built an ESP32-based data acquisition prototype with local logging, wireless communication options, and dashboard integration.</p>
-              <div class="project-detail-list">
-                <p><strong>My role:</strong> Embedded hardware and firmware prototyping, telemetry flow, and dashboard integration.</p>
-                <p><strong>Outcome:</strong> Demonstrated local logging and remote monitoring paths for field data collection.</p>
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-10 reveal">
+            <div class="hero-product-panel onepage-avatar-wrap" aria-label="Profile">
+              <div class="hero-panel-top">
+                <img src="assets/images/nazursyahmi.jpg" alt="Ts Muhammad Nazur Syahmi">
               </div>
-              <div class="tag-list"><span class="tag">ESP32</span><span class="tag">LoRa</span><span class="tag">MQTT</span></div>
-              <span class="project-link-label">View case study</span>
             </div>
-          </a>
-          <a class="feature-project reveal" href="projects/smart-rice-machine.html">
-            <div class="feature-media icon-media"><i class="bi bi-person-vcard"></i></div>
-            <div class="feature-body">
-              <span>RFID automation</span>
-              <h3>Smart Rice Machine</h3>
-              <p>Connected RFID identity, backend validation, and dispensing control to make aid distribution more traceable.</p>
-              <div class="project-detail-list">
-                <p><strong>My role:</strong> RFID workflow, backend validation logic, and machine integration.</p>
-                <p><strong>Outcome:</strong> Linked recipient identity, allocation checks, and controlled dispense flow.</p>
-              </div>
-              <div class="tag-list"><span class="tag">RFID</span><span class="tag">Automation</span><span class="tag">Backend</span></div>
-              <span class="project-link-label">View case study</span>
+            <p class="hero-role">Hardware Developer</p>
+            <p class="hero-role">(Electronics)</p>
+            <h2 class="hero-title">I build connected hardware products</h2>
+            <p class="lead">
+              I help teams and founders turn electronics ideas into reliable hardware, firmware,
+              IoT workflows, dashboards, and product documentation ready for real-world testing.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#portfolio"><i class="bi bi-kanban"></i>View Portfolio</a>
+              <a class="btn" href="#contact"><i class="bi bi-send"></i>Let's Talk</a>
+              <a class="btn subtle" href="doc/CV_Nazur_Syahmi_V2.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-arrow-down"></i>Download Resume</a>
             </div>
-          </a>
-          <article class="feature-project reveal">
-            <div class="feature-media icon-media"><i class="bi bi-motherboard"></i></div>
-            <div class="feature-body">
-              <span>Hardware prototyping</span>
-              <h3>PCB Prototype Work — notes in progress</h3>
-              <p>Board-level design, testing, and validation work prepared for clearer revision decisions and future release notes.</p>
-              <div class="project-detail-list">
-                <p><strong>My role:</strong> Board-level design review, bring-up thinking, testing, and validation notes.</p>
-                <p><strong>Outcome:</strong> Prepared prototype decisions and documentation for clearer hardware iteration.</p>
+            <div class="socials" aria-label="Professional links">
+              <a href="https://linkedin.com/in/nazursyahmi" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/nazursyahmi" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a href="mailto:nazur.syahmi@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="onepage-section clients-strip" id="proof">
+      <div class="container reveal">
+        <p class="eyebrow">Core stack and engineering focus</p>
+        <div class="row g-3 align-items-center justify-content-center stack-logo-row">
+          <div class="col-lg-2 col-md-3 col-6"><span>ESP32</span></div>
+          <div class="col-lg-2 col-md-3 col-6"><span>Sensors</span></div>
+          <div class="col-lg-2 col-md-3 col-6"><span>MQTT</span></div>
+          <div class="col-lg-2 col-md-3 col-6"><span>GSM / Cellular</span></div>
+          <div class="col-lg-2 col-md-3 col-6"><span>PCB Prototyping</span></div>
+          <div class="col-lg-2 col-md-3 col-6"><span>Web Dashboards</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="onepage-section light-panel" id="about">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>About Me</h2>
+          <p>A practical engineer connecting electronics, firmware, IoT workflows, and product decisions.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-9 text-center reveal">
+            <p class="story">
+              I build prototypes that are understandable, testable, and ready for the next product decision.
+              My work sits between the bench and the user-facing system: board-level thinking, device behavior,
+              telemetry, dashboards, and documentation that helps teams move with confidence.
+            </p>
+          </div>
+        </div>
+        <div class="row g-4 counters reveal" aria-label="Professional snapshot">
+          <div class="col-lg-3 col-6"><div class="counter"><span>HW</span><p>Hardware and interfaces</p></div></div>
+          <div class="col-lg-3 col-6"><div class="counter"><span>FW</span><p>Firmware and device logic</p></div></div>
+          <div class="col-lg-3 col-6"><div class="counter"><span>IoT</span><p>Telemetry and connectivity</p></div></div>
+          <div class="col-lg-3 col-6"><div class="counter"><span>Docs</span><p>Handover and validation notes</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="onepage-section" id="services">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>What I Do</h2>
+          <p>A focused set of engineering services, delivered from prototype to practical handover.</p>
+        </div>
+        <div class="row g-0 service-rows reveal">
+          <div class="col-12"><div class="row-item"><span class="n">01</span><div class="body"><h3>Embedded Systems Development</h3><p>MCU behavior, sensor interfaces, control logic, states, and debugging for device prototypes.</p></div><i class="bi bi-arrow-up-right"></i></div></div>
+          <div class="col-12"><div class="row-item"><span class="n">02</span><div class="body"><h3>IoT Product Development</h3><p>Telemetry flows, wireless communication, device-to-cloud workflows, and monitoring experiences.</p></div><i class="bi bi-arrow-up-right"></i></div></div>
+          <div class="col-12"><div class="row-item"><span class="n">03</span><div class="body"><h3>PCB / Hardware Prototyping</h3><p>Schematic review, prototype readiness, board bring-up, validation, and iteration planning.</p></div><i class="bi bi-arrow-up-right"></i></div></div>
+          <div class="col-12"><div class="row-item"><span class="n">04</span><div class="body"><h3>Firmware + Dashboard Integration</h3><p>Connect device data to useful logs, dashboards, backend endpoints, and product-facing visibility.</p></div><i class="bi bi-arrow-up-right"></i></div></div>
+          <div class="col-12"><div class="row-item"><span class="n">05</span><div class="body"><h3>Product Documentation</h3><p>Architecture notes, wiring references, validation notes, and handover material for future work.</p></div><i class="bi bi-arrow-up-right"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="onepage-section light-panel" id="skills">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Skills &amp; Tools</h2>
+          <p>The technical layers I use most often to make mixed hardware/software products work.</p>
+        </div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 reveal">
+            <div class="intro-panel">
+              <h3>A blend of hardware judgment and product execution.</h3>
+              <p>I move between electronics decisions, firmware behavior, communication paths, and dashboard usability so prototypes stay grounded and understandable.</p>
+              <div class="tags">
+                <span>ESP32</span><span>Firmware</span><span>MQTT</span><span>LoRa</span><span>GSM</span><span>PCB</span><span>Dashboards</span><span>Documentation</span>
               </div>
-              <div class="tag-list"><span class="tag">PCB</span><span class="tag">Bring-up</span><span class="tag">Validation</span></div>
+            </div>
+          </div>
+          <div class="col-lg-7 reveal">
+            <div class="skills-animation">
+              <div class="skill-line"><span><span>Embedded Firmware</span><i>90%</i></span><div class="bar"><b style="width:90%"></b></div></div>
+              <div class="skill-line"><span><span>IoT Architecture</span><i>86%</i></span><div class="bar"><b style="width:86%"></b></div></div>
+              <div class="skill-line"><span><span>PCB / Hardware Bring-Up</span><i>82%</i></span><div class="bar"><b style="width:82%"></b></div></div>
+              <div class="skill-line"><span><span>Backend and Dashboard Integration</span><i>78%</i></span><div class="bar"><b style="width:78%"></b></div></div>
+              <div class="skill-line"><span><span>Product Documentation</span><i>88%</i></span><div class="bar"><b style="width:88%"></b></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="onepage-section" id="experience">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Experience</h2>
+          <p>The roles and milestones that shaped how I build practical connected systems.</p>
+        </div>
+        <div class="row g-5">
+          <div class="col-lg-6 reveal">
+            <div class="col-head"><i class="bi bi-briefcase"></i><h3>Work Focus</h3></div>
+            <div class="timeline">
+              <div class="item"><span class="year">Current</span><h4>Hardware Developer (Electronic)</h4><span class="org">Embedded systems, IoT, and prototypes</span><p>Building and documenting connected hardware systems across firmware, interfaces, telemetry, and dashboards.</p></div>
+              <div class="item"><span class="year">Projects</span><h4>IoT and Automation Systems</h4><span class="org">Prototype to pilot workflows</span><p>Designed practical workflows where device identity, sensor data, and backend logic need to work together reliably.</p></div>
+              <div class="item"><span class="year">Delivery</span><h4>Technical Documentation</h4><span class="org">Architecture and handover</span><p>Preparing notes that make prototypes easier to test, explain, maintain, and improve.</p></div>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="col-head"><i class="bi bi-mortarboard"></i><h3>Engineering Range</h3></div>
+            <div class="timeline">
+              <div class="item"><span class="year">Hardware</span><h4>Interfaces and Bring-Up</h4><span class="org">PCB, sensors, power, validation</span><p>Board-level thinking and practical debugging for early-stage prototypes.</p></div>
+              <div class="item"><span class="year">Software</span><h4>Firmware and Data Flow</h4><span class="org">MCU logic, MQTT, HTTP, dashboards</span><p>Device behavior and telemetry paths designed for visibility and iteration.</p></div>
+              <div class="item"><span class="year">Product</span><h4>Usability and Handover</h4><span class="org">Clear system communication</span><p>Turning technical work into something teams can understand and continue building from.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="onepage-section light-panel" id="portfolio">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Selected Work</h2>
+          <p>Portfolio summaries only. Open each case study for details, architecture, images, and project notes.</p>
+        </div>
+        <div class="cases">
+          <article class="case reveal">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-6"><a href="projects/smart-iot-datalogger.html" class="shot"><img src="assets/images/smart-iot-datalogger/datalogger1.png" alt="Smart IoT Datalogger prototype"></a></div>
+              <div class="col-lg-6"><div class="copy"><span class="cat">IoT Device Platform</span><h3>Smart IoT Datalogger</h3><p>ESP32-based data acquisition prototype with local logging, wireless communication options, and dashboard integration.</p><a href="projects/smart-iot-datalogger.html" class="more">View case study <i class="bi bi-arrow-right"></i></a></div></div>
+            </div>
+          </article>
+          <article class="case reverse reveal">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-6 order-lg-2"><a href="projects/smart-rice-machine.html" class="shot icon-shot"><i class="bi bi-person-vcard"></i></a></div>
+              <div class="col-lg-6 order-lg-1"><div class="copy"><span class="cat">RFID Automation</span><h3>Smart Rice Machine</h3><p>RFID identity, backend validation, and dispensing control for more traceable aid distribution workflows.</p><a href="projects/smart-rice-machine.html" class="more">View case study <i class="bi bi-arrow-right"></i></a></div></div>
+            </div>
+          </article>
+          <article class="case reveal">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-6"><div class="shot icon-shot"><i class="bi bi-motherboard"></i></div></div>
+              <div class="col-lg-6"><div class="copy"><span class="cat">Hardware Prototyping</span><h3>PCB Prototype Work</h3><p>Board-level design, testing, and validation notes prepared for future public case-study release.</p><span class="more muted-more">Details coming soon</span></div></div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section saas-section process-band" id="process">
+    <section class="onepage-section" id="process">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="kicker">Process</span>
-            <h2>A structured path from idea to deployed prototype.</h2>
-          </div>
-          <p class="section-copy">The goal is to reduce uncertainty early, test the right things, and leave a system that can be understood.</p>
+        <div class="section-title reveal">
+          <h2>How I Work</h2>
+          <p>A simple, collaborative process that keeps hardware and software work moving clearly.</p>
         </div>
-        <div class="process-grid reveal">
-          <div class="process-step"><b>01</b><h3>Discover</h3><p>Clarify goals, users, constraints, interfaces, risks, and the first useful milestone.</p></div>
-          <div class="process-step"><b>02</b><h3>Prototype</h3><p>Build the hardware, firmware, connectivity, or dashboard layer needed to test the idea.</p></div>
-          <div class="process-step"><b>03</b><h3>Validate</h3><p>Measure behavior, debug edge cases, check reliability, and refine the product direction.</p></div>
-          <div class="process-step"><b>04</b><h3>Deploy</h3><p>Prepare dashboards, documentation, handover notes, and next-step recommendations.</p></div>
+        <div class="row g-4 steps reveal">
+          <div class="col-lg-3 col-6"><div class="step"><span class="num">01</span><i class="bi bi-search"></i><h3>Discover</h3><p>Clarify goals, users, constraints, interfaces, risks, and the first useful milestone.</p></div></div>
+          <div class="col-lg-3 col-6"><div class="step"><span class="num">02</span><i class="bi bi-cpu"></i><h3>Prototype</h3><p>Build the hardware, firmware, connectivity, or dashboard layer needed to test the idea.</p></div></div>
+          <div class="col-lg-3 col-6"><div class="step"><span class="num">03</span><i class="bi bi-clipboard2-check"></i><h3>Validate</h3><p>Measure behavior, debug edge cases, check reliability, and refine the product direction.</p></div></div>
+          <div class="col-lg-3 col-6"><div class="step"><span class="num">04</span><i class="bi bi-rocket-takeoff"></i><h3>Deploy</h3><p>Prepare dashboards, documentation, handover notes, and next-step recommendations.</p></div></div>
         </div>
       </div>
     </section>
 
-    <section class="section saas-section" id="capabilities">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="kicker">Capabilities</span>
-            <h2>Technical range for mixed hardware and software products.</h2>
+    <section class="onepage-section cta-section" id="cta">
+      <div class="container reveal">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <div class="cta-center">
+              <span class="kicker">Let's work together</span>
+              <h2>Need help turning a hardware idea into a working connected product?</h2>
+              <p>Reach out for freelance, consulting, collaboration, or project-based engineering work across hardware, firmware, IoT, and dashboards.</p>
+              <a href="#contact" class="btn primary">Start a Conversation <i class="bi bi-arrow-right"></i></a>
+              <span class="note"><i class="bi bi-clock"></i> Direct channels are active</span>
+            </div>
           </div>
-          <p class="section-copy">I work best where electronics, firmware, connectivity, and product usability need to move together.</p>
-        </div>
-        <div class="capability-matrix reveal">
-          <div><span>Hardware</span><p>PCB review, interfaces, power considerations, prototype readiness, bring-up.</p></div>
-          <div><span>Firmware</span><p>MCU logic, sensors, logging, device states, protocol handling, diagnostics.</p></div>
-          <div><span>Connectivity</span><p>MQTT, HTTP, LoRa, GSM, Wi-Fi, RS-485, device-to-server workflows.</p></div>
-          <div><span>Web / Dashboard</span><p>Telemetry views, backend integration, monitoring pages, data visibility.</p></div>
-          <div><span>Product Documentation</span><p>Architecture notes, wiring references, validation notes, handover material.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section saas-section profile-band" id="profile">
-      <div class="container profile-grid">
-        <div class="profile-copy reveal">
-          <span class="kicker">Professional Profile</span>
-          <h2>An engineer who bridges hardware, firmware, IoT, dashboard, and product execution.</h2>
-          <p>
-            I bring practical judgment to systems where electronics choices, firmware behavior,
-            connectivity decisions, and user-facing data must align. My work is focused on creating
-            prototypes that are understandable, testable, and ready for the next product decision.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="contact.html"><i class="bi bi-send"></i>Work With Me</a>
-            <a class="btn subtle" href="doc/CV_Nazur_Syahmi_V2.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-person"></i>View Resume</a>
-          </div>
-        </div>
-        <aside class="credibility-card reveal" aria-label="Credibility highlights">
-          <img src="assets/images/profilegif.gif" alt="Animated engineering profile visual">
-          <div class="credibility-list">
-            <span><i class="bi bi-check-circle"></i> Product-minded engineering</span>
-            <span><i class="bi bi-check-circle"></i> Hands-on prototype debugging</span>
-            <span><i class="bi bi-check-circle"></i> Clear system documentation</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section saas-section">
+    <section class="onepage-section light-panel" id="contact">
       <div class="container">
-        <div class="saas-cta reveal">
-          <div>
-            <span class="kicker">Contact</span>
-            <h2>Need help turning a hardware idea into a working connected product?</h2>
-            <p>Reach out for freelance, consulting, collaboration, or project-based engineering work across hardware, firmware, IoT, and dashboards.</p>
+        <div class="section-title reveal">
+          <h2>Get In Touch</h2>
+          <p>Use the channels below for hardware, firmware, IoT, prototype, dashboard, or engineering collaboration inquiries.</p>
+        </div>
+        <div class="row justify-content-center reveal">
+          <div class="col-lg-8">
+            <div class="quick-contact">
+              <a href="mailto:nazur.syahmi@gmail.com"><i class="bi bi-envelope"></i> nazur.syahmi@gmail.com</a>
+              <a href="https://wa.me/60149466234?text=Hi%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> +60 14-946 6234</a>
+              <a href="https://linkedin.com/in/nazursyahmi" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> linkedin.com/in/nazursyahmi</a>
+              <a href="https://github.com/nazursyahmi" target="_blank" rel="noopener"><i class="bi bi-github"></i> github.com/nazursyahmi</a>
+            </div>
           </div>
-          <a class="btn primary" href="contact.html"><i class="bi bi-send"></i>Contact Me</a>
         </div>
       </div>
     </section>
