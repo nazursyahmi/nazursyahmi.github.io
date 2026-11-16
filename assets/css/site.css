@@ -4684,3 +4684,130 @@ body.saas-home::before {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* Project evidence and accessible reading paths. */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: #fff;
+  color: #12315f;
+  font-weight: 800;
+  transform: translateY(-180%);
+}
+.skip-link:focus { transform: translateY(0); }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid #0891b2;
+  outline-offset: 5px;
+}
+[id] { scroll-margin-top: 110px; }
+.project-evidence { margin: 20px 0; }
+.project-evidence > div {
+  padding: 14px 0;
+  border-top: 1px solid rgba(15, 23, 42, .14);
+}
+.project-evidence dt {
+  color: #12315f;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.project-evidence dd {
+  margin: 6px 0 0;
+  color: #43536a;
+  font-size: .95rem;
+  line-height: 1.7;
+}
+.capability-list { display: grid; gap: 18px; }
+.capability-list article {
+  padding: 22px 24px;
+  border-left: 3px solid #155eef;
+  background: #f2f6fc;
+  border-radius: 0 12px 12px 0;
+}
+.capability-list h3 { font-size: 1.1rem; }
+.capability-list p { margin-bottom: 10px; }
+.capability-list a { color: #155eef; font-size: .9rem; font-weight: 700; }
+.system-preview { padding: 28px; text-align: center; display: grid; justify-items: center; gap: 18px; }
+.system-preview strong { color: #12315f; font-size: 1.4rem; }
+.system-preview span { color: #334b6c; font-size: .95rem; line-height: 1.8; }
+.system-preview small { font-size: .8rem; font-weight: 700; }
+.onepage-home .shot img { object-fit: contain; padding: 14px; }
+.evidence-note { padding: 22px; margin: 24px 0; background: #eef6ff; border-left: 3px solid #155eef; border-radius: 8px; }
+.evidence-note h3 { font-size: 1.1rem; }
+.evidence-note p { margin-bottom: 0; }
+.case-next { display: grid; gap: 8px; padding: 28px; margin: 36px 0; border-radius: 14px; background: #eef6ff; color: #12315f; }
+.case-next > span { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.case-next a { font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 800; }
+.case-image { height: auto; object-fit: contain; }
+@media (max-width: 720px) {
+  .capability-list article { padding: 18px; }
+  .project-evidence dd { font-size: .9rem; }
+  .onepage-home .shot:has(.system-preview) { height: auto; min-height: 230px; }
+  .system-preview { padding: 20px; gap: 12px; }
+  .case-next { padding: 22px; }
+  .nav-links a { min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+.onepage-home .management-tools { margin-top: 24px; }
+.onepage-home .management-tools .intro-panel { height: 100%; }
+.onepage-home .management-tools h3 { font-size: 1.2rem; }
+
+/* Credentials retain the distinction between certification and training. */
+.credential-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.credential-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid #dce5f0; border-radius: 16px; background: #fff; }
+.credential-preview { display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 16px; background: #eef3f9; }
+.credential-preview img { width: 100%; height: 100%; object-fit: contain; min-height: 0; }
+.credential-body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; padding: 24px; }
+.credential-type { color: #155eef; font-size: .72rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.credential-body h3 { margin: 12px 0; font-size: 1.14rem; line-height: 1.45; color: #12315f; }
+.credential-body p { font-size: .9rem; }
+.credential-body .credential-issuer { font-weight: 800; color: #43536a; }
+.credential-date { color: #43536a; }
+.credential-link { margin-top: auto; padding-top: 12px; color: #155eef; font-size: .88rem; font-weight: 800; }
+.training-intro { margin: 42px 0 22px; }
+.training-intro h3 { font-size: 1.4rem; }
+.certificate-groups { display: grid; gap: 12px; }
+.certificate-group { border: 1px solid #dce5f0; background: #fff; border-radius: 12px; }
+.certificate-group summary { padding: 20px 24px; cursor: pointer; font-weight: 800; color: #12315f; }
+.certificate-group summary span { margin-left: 12px; color: #5d6678; font-size: .82rem; font-weight: 600; white-space: nowrap; }
+.certificate-group summary:focus-visible { outline: 3px solid #0891b2; outline-offset: 3px; border-radius: 12px; }
+.certificate-list { list-style: none; padding: 0 24px; margin: 0; }
+.certificate-list li { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 0; border-top: 1px solid #dce5f0; margin: 0; }
+.certificate-list h4 { margin: 0 0 8px; color: #12315f; font-size: 1rem; line-height: 1.5; }
+.certificate-list p { margin: 0; font-size: .84rem; color: #526176; line-height: 1.65; }
+.certificate-list a { flex-shrink: 0; color: #155eef; font-size: .88rem; font-weight: 800; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; }
+.management-learning { display: flex; gap: 20px; padding: 26px; margin-top: 28px; background: #eef6ff; border-radius: 14px; color: #12315f; }
+.management-learning > i { color: #155eef; font-size: 1.8rem; }
+.management-learning h3 { font-size: 1.15rem; }
+.management-learning p { font-size: .95rem; }
+.management-learning a { color: #155eef; font-size: .9rem; font-weight: 800; }
+@media (min-width: 961px) {
+  .onepage-home .nav-inner { flex-wrap: wrap; justify-content: center; padding-block: 12px; gap: 10px 24px; }
+  .onepage-home .nav-links { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 960px) {
+  .credential-grid { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
+  .credential-preview { aspect-ratio: 16 / 9; }
+  .onepage-home .nav-links.is-open { max-height: min(65vh, 32rem); overflow-y: auto; }
+}
+@media (max-width: 600px) {
+  .credential-body { padding: 20px; }
+  .certificate-group summary { padding: 18px; }
+  .certificate-group summary span { display: block; margin: 6px 0 0 18px; }
+  .certificate-list { padding-inline: 18px; }
+  .certificate-list li { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .management-learning { padding: 20px; gap: 14px; }
+}
+@media (min-width: 961px) {
+  .onepage-home [id] { scroll-margin-top: 160px; }
+}

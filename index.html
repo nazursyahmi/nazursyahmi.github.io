@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body class="premium-site premium-home saas-home onepage-home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="brand" href="#hero" aria-label="Ts Muhammad Nazur Syahmi home">
@@ -27,32 +28,32 @@
         <a href="#about"><i class="bi bi-person"></i>About</a>
         <a href="#services"><i class="bi bi-grid"></i>Services</a>
         <a href="#skills"><i class="bi bi-tools"></i>Skills</a>
-        <a href="#experience"><i class="bi bi-briefcase"></i>Experience</a>
+        <a href="#certifications"><i class="bi bi-award"></i>Certifications</a>
+        <a href="#process"><i class="bi bi-kanban"></i>Project Management</a>
         <a href="#portfolio"><i class="bi bi-kanban"></i>Portfolio</a>
         <a href="#contact"><i class="bi bi-send"></i>Contact</a>
       </div>
     </div>
   </nav>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="hero saas-hero onepage-hero" id="hero">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-10 reveal">
             <div class="hero-product-panel onepage-avatar-wrap" aria-label="Profile">
               <div class="hero-panel-top">
-                <img src="assets/images/nazursyahmi.jpg" alt="Ts Muhammad Nazur Syahmi">
+                <img fetchpriority="high" src="assets/images/nazursyahmi.jpg" alt="Ts Muhammad Nazur Syahmi">
               </div>
             </div>
-            <p class="hero-role">Hardware Developer</p>
-            <p class="hero-role">(Electronics)</p>
-            <h2 class="hero-title">I build connected hardware products</h2>
+            <p class="hero-role">Hardware Developer · Electronics &amp; IoT</p>
+            <h1 class="hero-title">From sensor signals to connected systems.</h1>
             <p class="lead">
-              I help teams and founders turn electronics ideas into reliable hardware, firmware,
-              IoT workflows, dashboards, and product documentation ready for real-world testing.
+              I connect electronics, embedded firmware, and backend logic to build working prototypes.
+              Explore an ESP32 datalogger and an RFID-controlled rice distribution system below.
             </p>
             <div class="hero-actions">
-              <a class="btn primary" href="#portfolio"><i class="bi bi-kanban"></i>View Portfolio</a>
+              <a class="btn primary" href="#portfolio"><i class="bi bi-kanban"></i>Explore My Work</a>
               <a class="btn" href="#contact"><i class="bi bi-send"></i>Let's Talk</a>
               <a class="btn subtle" href="doc/CV_Nazur_Syahmi_V2.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-arrow-down"></i>Download Resume</a>
             </div>
@@ -76,6 +77,29 @@
           <div class="col-lg-2 col-md-3 col-6"><span>GSM / Cellular</span></div>
           <div class="col-lg-2 col-md-3 col-6"><span>PCB Prototyping</span></div>
           <div class="col-lg-2 col-md-3 col-6"><span>Web Dashboards</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="onepage-section light-panel" id="portfolio">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Selected Work</h2>
+          <p>Two projects showing how hardware, firmware, and backend logic fit together. Explore the scope, decisions, and available evidence.</p>
+        </div>
+        <div class="cases">
+          <article class="case reveal">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-6"><a href="projects/smart-iot-datalogger.html" class="shot"><img loading="lazy" src="assets/images/smart-iot-datalogger/datalogger1.png" alt="Smart IoT Datalogger prototype"></a></div>
+              <div class="col-lg-6"><div class="copy"><span class="cat">01 / Embedded IoT · Proof of concept</span><h3>Smart IoT Datalogger</h3><p>Collect sensor readings locally and connect them to a monitoring backend.</p><dl class="project-evidence"><div><dt>Engineering scope</dt><dd>ESP32 interfaces, SD logging, configurable wireless communication, and dashboard integration.</dd></div><div><dt>Evidence</dt><dd>Prototype photos, circuit and PCB views, system architecture, and backend screenshots.</dd></div></dl><a href="projects/smart-iot-datalogger.html" class="more">View case study <i class="bi bi-arrow-right"></i></a></div></div>
+            </div>
+          </article>
+          <article class="case reverse reveal">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-6 order-lg-2"><a href="projects/smart-rice-machine.html" class="shot icon-shot"><div class="system-preview"><i class="bi bi-person-vcard" aria-hidden="true"></i><strong>Smart Rice Machine</strong><span>RFID identity → Allocation check → Dispense</span><small>Explore the system workflow</small></div></a></div>
+              <div class="col-lg-6 order-lg-1"><div class="copy"><span class="cat">02 / RFID Automation · NGO project</span><h3>Smart Rice Machine</h3><p>Verify a recipient’s allocation before dispensing rice aid.</p><dl class="project-evidence"><div><dt>My contribution</dt><dd>System workflow, PHP/MySQL backend logic, and server-to-machine integration.</dd></div><div><dt>System behavior</dt><dd>RFID identification connects recipient records to approved dispensing instructions.</dd></div></dl><a href="projects/smart-rice-machine.html" class="more">View case study <i class="bi bi-arrow-right"></i></a></div></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -137,14 +161,61 @@
             </div>
           </div>
           <div class="col-lg-7 reveal">
-            <div class="skills-animation">
-              <div class="skill-line"><span><span>Embedded Firmware</span><i>90%</i></span><div class="bar"><b style="width:90%"></b></div></div>
-              <div class="skill-line"><span><span>IoT Architecture</span><i>86%</i></span><div class="bar"><b style="width:86%"></b></div></div>
-              <div class="skill-line"><span><span>PCB / Hardware Bring-Up</span><i>82%</i></span><div class="bar"><b style="width:82%"></b></div></div>
-              <div class="skill-line"><span><span>Backend and Dashboard Integration</span><i>78%</i></span><div class="bar"><b style="width:78%"></b></div></div>
-              <div class="skill-line"><span><span>Product Documentation</span><i>88%</i></span><div class="bar"><b style="width:88%"></b></div></div>
+            <div class="capability-list">
+              <article><h3>Embedded interfaces</h3><p>ESP32, analog and digital inputs, I2C, UART, SPI, and RS-485 Modbus RTU.</p><a href="projects/smart-iot-datalogger.html#hardware">See the datalogger hardware <span aria-hidden="true">→</span></a></article>
+              <article><h3>Telemetry and monitoring</h3><p>Local SD storage, Wi-Fi, LoRa or GSM configurations, HTTP POST, and MQTT.</p><a href="projects/smart-iot-datalogger.html#communication">Explore the communication design <span aria-hidden="true">→</span></a></article>
+              <article><h3>Backend and automation</h3><p>PHP/MySQL recipient records, allocation validation, and connected dispensing logic.</p><a href="projects/smart-rice-machine.html#contribution">Read about my contribution <span aria-hidden="true">→</span></a></article>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="onepage-section light-panel" id="certifications" aria-labelledby="certifications-title">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2 id="certifications-title">Certifications &amp; Credentials</h2>
+          <p>18 records of certification, competency, and professional development across electronics, IoT, software, and AI-assisted project collaboration.</p>
+        </div>
+        <div class="credential-grid" aria-label="Certification and competency credentials">
+          <article class="credential-card reveal">
+            <a class="credential-preview" href="doc/certifications/Cert%20Arduino.pdf" target="_blank" rel="noopener" aria-label="View Arduino Certification certificate PDF in a new tab"><img loading="lazy" src="assets/images/certifications/arduino.webp" alt="Arduino Certification certificate"></a>
+            <div class="credential-body"><span class="credential-type">Exam-based certification</span><h3>Arduino Certification</h3><p class="credential-issuer">Arduino Education</p><p>Electronics and Physical Computing</p><p class="credential-date">11 March 2026</p><a class="credential-link" href="doc/certifications/Cert%20Arduino.pdf" target="_blank" rel="noopener" aria-label="View Arduino Certification certificate PDF in a new tab">View certificate <span>(PDF)</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="credential-card reveal">
+            <a class="credential-preview" href="doc/certifications/Cert_%28IoT%29_Fundamentals_with_Favoriot_IoT_Platform.pdf" target="_blank" rel="noopener" aria-label="View IoT Fundamentals with Favoriot IoT Platform certificate PDF in a new tab"><img loading="lazy" src="assets/images/certifications/favoriot-fundamentals.webp" alt="IoT Fundamentals with Favoriot IoT Platform certificate"></a>
+            <div class="credential-body"><span class="credential-type">Exam-based certification</span><h3>IoT Fundamentals with Favoriot IoT Platform</h3><p class="credential-issuer">Favoriot Sdn Bhd</p><p>Certified Professional credential in IoT fundamentals.</p><a class="credential-link" href="doc/certifications/Cert_%28IoT%29_Fundamentals_with_Favoriot_IoT_Platform.pdf" target="_blank" rel="noopener" aria-label="View IoT Fundamentals with Favoriot IoT Platform certificate PDF in a new tab">View certificate <span>(PDF)</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="credential-card reveal">
+            <a class="credential-preview" href="doc/certifications/Cert_SHRDC.pdf" target="_blank" rel="noopener" aria-label="View Malaysian-Swiss Smart Factory Operational Technologies Fundamental certificate PDF in a new tab"><img loading="lazy" src="assets/images/certifications/smart-factory.webp" alt="Malaysian-Swiss Smart Factory Operational Technologies Fundamental certificate"></a>
+            <div class="credential-body"><span class="credential-type">Certificate of Competence</span><h3>Malaysian-Swiss Smart Factory Operational Technologies Fundamental</h3><p class="credential-issuer">Swiss Smart Factory / MyLiveZone GmbH</p><p>Smart-factory operational technologies.</p><p class="credential-date">12 December 2018</p><a class="credential-link" href="doc/certifications/Cert_SHRDC.pdf" target="_blank" rel="noopener" aria-label="View Malaysian-Swiss Smart Factory Operational Technologies Fundamental certificate PDF in a new tab">View certificate <span>(PDF)</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
+          </article>
+        </div>
+        <div class="training-intro"><h3>Courses &amp; Professional Development</h3><p>Course completion, attendance, and webinar participation, listed separately from the credentials above. Expand a group to view its certificates.</p></div>
+        <div class="certificate-groups">
+          <details class="certificate-group"><summary>IoT &amp; Embedded Systems <span>7 certificates</span></summary><ul class="certificate-list">
+            <li><div><h4>Advanced Internet of Things (IoT) with Favoriot Platform</h4><p>Favoriot Sdn Bhd · Course completion · 24–26 September 2024</p></div><a href="doc/certifications/Cert_%28IoT%29_Advanced_with_Favoriot_IoT_Platform.pdf" target="_blank" rel="noopener" aria-label="View Advanced Internet of Things (IoT) with Favoriot Platform certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>Introduction to Internet-of-Things (IoT) and LoRa Technology on ESP32/Arduino</h4><p>National Training Week / HRD Corp · Course completion</p></div><a href="doc/certifications/Cert%20IoT%26LoRa.pdf" target="_blank" rel="noopener" aria-label="View Introduction to Internet-of-Things (IoT) and LoRa Technology on ESP32/Arduino certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>Arduino OOP (Object Oriented Programming)</h4><p>Udemy · Course completion</p></div><a href="doc/certifications/Cert_Arduino_OOP.pdf" target="_blank" rel="noopener" aria-label="View Arduino OOP (Object Oriented Programming) certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>Microcontroller Communication Protocols Bundle</h4><p>Udemy · Course completion</p></div><a href="doc/certifications/Cert_Uc_Communication_Protocols.pdf" target="_blank" rel="noopener" aria-label="View Microcontroller Communication Protocols Bundle certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>How to Program an Arduino for CAN bus Network Communication</h4><p>Udemy · Course completion · 1 January 2022</p></div><a href="doc/certifications/Cert_CAN_Bus.pdf" target="_blank" rel="noopener" aria-label="View How to Program an Arduino for CAN bus Network Communication certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>Mastering Modbus RS485 Network Communication</h4><p>Udemy · Course completion · 17 February 2021</p></div><a href="doc/certifications/Cert_Modbus_RTU.pdf" target="_blank" rel="noopener" aria-label="View Mastering Modbus RS485 Network Communication certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>Mastering Modbus TCP/IP Network Communication</h4><p>Udemy · Course completion · 18 February 2021</p></div><a href="doc/certifications/Cert_Modbus_TCP.pdf" target="_blank" rel="noopener" aria-label="View Mastering Modbus TCP/IP Network Communication certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+          </ul></details>
+          <details class="certificate-group"><summary>Electronics &amp; CAD <span>3 certificates</span></summary><ul class="certificate-list">
+            <li><div><h4>Analog Electronic Circuit Design in Simple Words</h4><p>Udemy · Course completion · 13 June 2021</p></div><a href="doc/certifications/Cert_Analogue_Electronic_Circuit_Design.pdf" target="_blank" rel="noopener" aria-label="View Analog Electronic Circuit Design in Simple Words certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>Learn the Art and Science of PCB Design with Eagle</h4><p>Udemy · Course completion</p></div><a href="doc/certifications/Cert_Eagle_Cad.pdf" target="_blank" rel="noopener" aria-label="View Learn the Art and Science of PCB Design with Eagle certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>SOLIDWORKS: Become a Certified Associate Today (CSWA)</h4><p>Udemy · Course completion · CSWA preparation</p></div><a href="doc/certifications/Cert_Solidworks.pdf" target="_blank" rel="noopener" aria-label="View SOLIDWORKS: Become a Certified Associate Today (CSWA) certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+          </ul></details>
+          <details class="certificate-group"><summary>Web Development &amp; Dashboards <span>4 certificates</span></summary><ul class="certificate-list">
+            <li><div><h4>Design a Web</h4><p>ADTEC Melaka / National Training Week · Course completion · 25 May 2023</p></div><a href="doc/certifications/public/design-a-web.pdf" target="_blank" rel="noopener" aria-label="View Design a Web certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>HTML &amp; CSS for Beginner</h4><p>National Training Week / HRD Corp · Course completion</p></div><a href="doc/certifications/Cert%20HTML%20%26%20CSS.pdf" target="_blank" rel="noopener" aria-label="View HTML &amp; CSS for Beginner certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>Building Effective Websites: UI &amp; UX</h4><p>National Training Week / HRD Corp · Course completion</p></div><a href="doc/certifications/Cert%20UI%26UX.pdf" target="_blank" rel="noopener" aria-label="View Building Effective Websites: UI &amp; UX certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><div><h4>Pembangunan Dashboard Realtime dengan JavaScript dan Google Charts</h4><p>Taming Tech Sdn Bhd · Attendance and completion · 24–25 August 2023</p></div><a href="doc/certifications/Cert_Javascript_Googlecharts.pdf" target="_blank" rel="noopener" aria-label="View Pembangunan Dashboard Realtime dengan JavaScript dan Google Charts certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+          </ul></details>
+          <details class="certificate-group"><summary>AI &amp; Project Collaboration <span>1 certificates</span></summary><ul class="certificate-list">
+            <li><div><h4>Revolutionizing Document Access: AI-Powered Project Repository for Seamless Client and Project Owner Collaboration</h4><p>PCSS Digital Construction Webinar Series · Webinar participation · Certificate of appreciation · 28 February 2025</p></div><a href="doc/certifications/public/ai-powered-project-repository.pdf" target="_blank" rel="noopener" aria-label="View Revolutionizing Document Access: AI-Powered Project Repository for Seamless Client and Project Owner Collaboration certificate PDF in a new tab">View PDF <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></li>
+          </ul></details>
         </div>
       </div>
     </section>
@@ -152,15 +223,15 @@
     <section class="onepage-section" id="experience">
       <div class="container">
         <div class="section-title reveal">
-          <h2>Experience</h2>
-          <p>The roles and milestones that shaped how I build practical connected systems.</p>
+          <h2>Engineering Capabilities</h2>
+          <p>The engineering layers I work across, from device interfaces to backend workflows.</p>
         </div>
         <div class="row g-5">
           <div class="col-lg-6 reveal">
             <div class="col-head"><i class="bi bi-briefcase"></i><h3>Work Focus</h3></div>
             <div class="timeline">
-              <div class="item"><span class="year">Current</span><h4>Hardware Developer (Electronic)</h4><span class="org">Embedded systems, IoT, and prototypes</span><p>Building and documenting connected hardware systems across firmware, interfaces, telemetry, and dashboards.</p></div>
-              <div class="item"><span class="year">Projects</span><h4>IoT and Automation Systems</h4><span class="org">Prototype to pilot workflows</span><p>Designed practical workflows where device identity, sensor data, and backend logic need to work together reliably.</p></div>
+              <div class="item"><span class="year">Focus</span><h4>Hardware Developer (Electronic)</h4><span class="org">Embedded systems, IoT, and prototypes</span><p>Building and documenting connected hardware systems across firmware, interfaces, telemetry, and dashboards.</p></div>
+              <div class="item"><span class="year">Projects</span><h4>IoT and Automation Systems</h4><span class="org">Device-to-backend workflows</span><p>Designed practical workflows where device identity, sensor data, and backend logic need to work together reliably.</p></div>
               <div class="item"><span class="year">Delivery</span><h4>Technical Documentation</h4><span class="org">Architecture and handover</span><p>Preparing notes that make prototypes easier to test, explain, maintain, and improve.</p></div>
             </div>
           </div>
@@ -176,48 +247,26 @@
       </div>
     </section>
 
-    <section class="onepage-section light-panel" id="portfolio">
-      <div class="container">
-        <div class="section-title reveal">
-          <h2>Selected Work</h2>
-          <p>Portfolio summaries only. Open each case study for details, architecture, images, and project notes.</p>
-        </div>
-        <div class="cases">
-          <article class="case reveal">
-            <div class="row g-4 align-items-center">
-              <div class="col-lg-6"><a href="projects/smart-iot-datalogger.html" class="shot"><img src="assets/images/smart-iot-datalogger/datalogger1.png" alt="Smart IoT Datalogger prototype"></a></div>
-              <div class="col-lg-6"><div class="copy"><span class="cat">IoT Device Platform</span><h3>Smart IoT Datalogger</h3><p>ESP32-based data acquisition prototype with local logging, wireless communication options, and dashboard integration.</p><a href="projects/smart-iot-datalogger.html" class="more">View case study <i class="bi bi-arrow-right"></i></a></div></div>
-            </div>
-          </article>
-          <article class="case reverse reveal">
-            <div class="row g-4 align-items-center">
-              <div class="col-lg-6 order-lg-2"><a href="projects/smart-rice-machine.html" class="shot icon-shot"><i class="bi bi-person-vcard"></i></a></div>
-              <div class="col-lg-6 order-lg-1"><div class="copy"><span class="cat">RFID Automation</span><h3>Smart Rice Machine</h3><p>RFID identity, backend validation, and dispensing control for more traceable aid distribution workflows.</p><a href="projects/smart-rice-machine.html" class="more">View case study <i class="bi bi-arrow-right"></i></a></div></div>
-            </div>
-          </article>
-          <article class="case reveal">
-            <div class="row g-4 align-items-center">
-              <div class="col-lg-6"><div class="shot icon-shot"><i class="bi bi-motherboard"></i></div></div>
-              <div class="col-lg-6"><div class="copy"><span class="cat">Hardware Prototyping</span><h3>PCB Prototype Work</h3><p>Board-level design, testing, and validation notes prepared for future public case-study release.</p><span class="more muted-more">Details coming soon</span></div></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="onepage-section" id="process">
+
+    <section class="onepage-section" id="process" aria-labelledby="management-title">
       <div class="container">
         <div class="section-title reveal">
-          <h2>How I Work</h2>
-          <p>A simple, collaborative process that keeps hardware and software work moving clearly.</p>
+          <h2 id="management-title">Project Management</h2>
+          <p>I organize engineering work from requirements to handover, adapting the planning and tracking tools to the project and the team.</p>
         </div>
         <div class="row g-4 steps reveal">
-          <div class="col-lg-3 col-6"><div class="step"><span class="num">01</span><i class="bi bi-search"></i><h3>Discover</h3><p>Clarify goals, users, constraints, interfaces, risks, and the first useful milestone.</p></div></div>
-          <div class="col-lg-3 col-6"><div class="step"><span class="num">02</span><i class="bi bi-cpu"></i><h3>Prototype</h3><p>Build the hardware, firmware, connectivity, or dashboard layer needed to test the idea.</p></div></div>
-          <div class="col-lg-3 col-6"><div class="step"><span class="num">03</span><i class="bi bi-clipboard2-check"></i><h3>Validate</h3><p>Measure behavior, debug edge cases, check reliability, and refine the product direction.</p></div></div>
-          <div class="col-lg-3 col-6"><div class="step"><span class="num">04</span><i class="bi bi-rocket-takeoff"></i><h3>Deploy</h3><p>Prepare dashboards, documentation, handover notes, and next-step recommendations.</p></div></div>
+          <div class="col-lg-3 col-sm-6"><div class="step"><span class="num">01</span><i class="bi bi-search" aria-hidden="true"></i><h3>Define the Scope</h3><p>Clarify requirements, constraints, deliverables, and acceptance criteria so the team shares a clear target.</p></div></div>
+          <div class="col-lg-3 col-sm-6"><div class="step"><span class="num">02</span><i class="bi bi-calendar-check" aria-hidden="true"></i><h3>Plan the Work</h3><p>Break delivery into tasks and milestones, identify dependencies, and set priorities across hardware and software.</p></div></div>
+          <div class="col-lg-3 col-sm-6"><div class="step"><span class="num">03</span><i class="bi bi-kanban" aria-hidden="true"></i><h3>Track &amp; Coordinate</h3><p>Review progress, surface risks and blockers, document changes, and keep stakeholders informed about next steps.</p></div></div>
+          <div class="col-lg-3 col-sm-6"><div class="step"><span class="num">04</span><i class="bi bi-clipboard2-check" aria-hidden="true"></i><h3>Validate &amp; Handover</h3><p>Check deliverables against the agreed scope and prepare technical documentation, open issues, and handover notes.</p></div></div>
+        </div>
+        <div class="row g-4 management-tools reveal">
+          <div class="col-md-6"><article class="intro-panel"><h3>Conventional Planning &amp; Tracking</h3><p>Use schedules, task boards, spreadsheets, decision logs, and progress reports to make ownership, priorities, and delivery status visible.</p></article></div>
+          <div class="col-md-6"><article class="intro-panel"><h3>AI-Assisted Project Work</h3><p>Use AI to support task breakdowns, research summaries, draft documentation, and status updates. Review outputs against project facts before using them to guide decisions.</p></article></div>
         </div>
       </div>
+        <aside class="management-learning reveal" aria-label="Related professional development"><i class="bi bi-journal-check" aria-hidden="true"></i><div><h3>Learning in AI-Assisted Collaboration</h3><p>Participated in the PCSS webinar on AI-powered project repositories for client and project-owner collaboration, 28 February 2025.</p><a href="doc/certifications/public/ai-powered-project-repository.pdf" target="_blank" rel="noopener">View webinar participation certificate (PDF) <span aria-hidden="true">↗</span></a></div></aside>
     </section>
 
     <section class="onepage-section cta-section" id="cta">

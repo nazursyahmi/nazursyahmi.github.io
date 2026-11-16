@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body class="premium-site saas-home">
-  <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="brand" href="../index.html"><span class="brand-mark">NS</span><span>Ts Muhammad Nazur Syahmi<small>Hardware Developer (Electronic)</small></span></a>
       <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open navigation">
@@ -28,7 +29,7 @@
     </div>
   </nav>
 
-  <main class="page-main">
+  <main class="page-main" id="main-content" tabindex="-1">
     <div class="container">
       <a class="btn subtle reveal" href="../projects.html"><i class="bi bi-arrow-left"></i>Back to Projects</a>
 
@@ -43,9 +44,7 @@
           <div class="icon-box"><i class="bi bi-credit-card-2-front"></i></div>
           <h3>System Outcome</h3>
           <p>Controlled, traceable rice distribution where allocation is verified before the machine dispenses aid.</p>
-          <div class="motion-thumb">
-            <img src="../assets/images/profilegif.gif" alt="Animated automation case study visual">
-          </div>
+          <p><strong>My contribution:</strong> system flow, backend and database logic, and machine integration.</p>
         </aside>
       </header>
 
@@ -59,7 +58,7 @@
       <section class="section">
         <div class="section-head reveal">
           <div><span class="kicker">Overview</span><h2>Built for controlled aid distribution.</h2></div>
-          <p class="section-copy">The system made rice distribution more traceable and less dependent on manual checking at the dispensing point.</p>
+          <p class="section-copy">The workflow connects recipient registration, allocation checking, and machine control at the dispensing point.</p>
         </div>
         <div class="grid-2">
           <article class="card reveal">
@@ -93,7 +92,7 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="contribution">
         <div class="section-head reveal">
           <div><span class="kicker">My Role</span><h2>System design across software and machine behavior.</h2></div>
           <p class="section-copy">The work required connecting backend logic with the real dispensing workflow.</p>
@@ -110,11 +109,12 @@
           <div>
             <span class="kicker">Impact</span>
             <h2>Controlled, traceable, automated aid delivery.</h2>
-            <p>The value was not only technical. The system helped make community distribution more reliable and easier to validate.</p>
+            <p>The system links recipient identity and approved allocation to the dispensing instruction. This case study describes the workflow and my contribution; collection volumes, time savings, and dispensing accuracy measurements are not included.</p>
           </div>
           <a class="btn" href="../contact.html"><i class="bi bi-send"></i>Discuss Similar Work</a>
         </div>
       </section>
+      <nav class="case-next" aria-label="More project work"><span>Explore another project</span><a href="smart-iot-datalogger.html">Smart IoT Datalogger: sensors to dashboard <span aria-hidden="true">→</span></a></nav>
     </div>
   </main>
 

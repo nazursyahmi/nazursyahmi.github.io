@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body class="premium-site saas-home">
-  <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="brand" href="../index.html"><span class="brand-mark">NS</span><span>Ts Muhammad Nazur Syahmi<small>Hardware Developer (Electronic)</small></span></a>
       <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open navigation">
@@ -28,7 +29,7 @@
     </div>
   </nav>
 
-  <main class="page-main">
+  <main class="page-main" id="main-content" tabindex="-1">
     <div class="container">
       <a class="btn subtle reveal" href="../projects.html"><i class="bi bi-arrow-left"></i>Back to Projects</a>
 
@@ -43,9 +44,7 @@
           <div class="icon-box"><i class="bi bi-router"></i></div>
           <h3>Project Status</h3>
           <p>Learning-focused proof-of-concept. Some implementation details are generalized to respect confidentiality.</p>
-          <div class="motion-thumb">
-            <img src="../assets/images/profilegif.gif" alt="Animated case study profile visual">
-          </div>
+          <p><strong>Available evidence:</strong> hardware photographs, interface design views, system architecture, database, and dashboard screenshots.</p>
         </aside>
       </header>
 
@@ -62,7 +61,7 @@
         <div>
           <section class="card case-section reveal" id="overview">
             <span class="kicker">01 Overview</span>
-            <h2>Reliable field data acquisition.</h2>
+            <h2>Collect locally. Make readings visible remotely.</h2>
             <p>The system targets scenarios where sensor data must be collected, stored locally, and transmitted wirelessly for monitoring and analysis.</p>
             <ul>
               <li>Flexible embedded platform based on ESP32.</li>
@@ -71,8 +70,8 @@
               <li>Hardware, power, and communication trade-off exploration.</li>
             </ul>
             <div class="gallery-grid">
-              <figure class="media-card"><img class="case-image" src="../assets/images/smart-iot-datalogger/datalogger1.png" alt="Smart IoT Datalogger hardware prototype overview"><figcaption class="media-caption">Hardware prototype overview</figcaption></figure>
-              <figure class="media-card"><img class="case-image" src="../assets/images/smart-iot-datalogger/datalogger2.png" alt="Smart IoT Datalogger prototype assembly"><figcaption class="media-caption">Prototype assembly detail</figcaption></figure>
+              <figure class="media-card"><img loading="lazy" class="case-image" src="../assets/images/smart-iot-datalogger/datalogger1.png" alt="Smart IoT Datalogger hardware prototype overview"><figcaption class="media-caption">Hardware prototype overview</figcaption></figure>
+              <figure class="media-card"><img loading="lazy" class="case-image" src="../assets/images/smart-iot-datalogger/datalogger2.png" alt="Smart IoT Datalogger prototype assembly"><figcaption class="media-caption">Prototype assembly detail</figcaption></figure>
             </div>
           </section>
 
@@ -81,7 +80,7 @@
             <h2>Layered system design.</h2>
             <p>The datalogger separates sensing, processing, storage, communication, and backend components to simplify debugging and future extension.</p>
             <div class="flow"><span>Sensors</span><span>ESP32 MCU</span><span>SD Card Storage</span><span>Wireless Communication</span><span>Server / Dashboard</span></div>
-            <figure class="media-card wide"><img class="case-image" src="../assets/images/smart-iot-datalogger/system_architecture.png" alt="Smart IoT Datalogger system architecture diagram"><figcaption class="media-caption">Layered system architecture diagram</figcaption></figure>
+            <figure class="media-card wide"><img loading="lazy" class="case-image" src="../assets/images/smart-iot-datalogger/system_architecture.png" alt="Smart IoT Datalogger system architecture diagram"><figcaption class="media-caption">Layered system architecture diagram</figcaption></figure>
           </section>
 
           <section class="card case-section reveal" id="hardware">
@@ -94,8 +93,8 @@
               <li>Digital outputs for basic control actions and external triggering.</li>
             </ul>
             <div class="gallery-grid">
-              <figure class="media-card"><img class="case-image" src="../assets/images/smart-iot-datalogger/circuit.png" alt="Smart IoT Datalogger circuit view"><figcaption class="media-caption">Hardware design view</figcaption></figure>
-              <figure class="media-card"><img class="case-image" src="../assets/images/smart-iot-datalogger/pcb.png" alt="Smart IoT Datalogger PCB view"><figcaption class="media-caption">Interface and hardware design detail</figcaption></figure>
+              <figure class="media-card"><img loading="lazy" class="case-image" src="../assets/images/smart-iot-datalogger/circuit.png" alt="Smart IoT Datalogger circuit view"><figcaption class="media-caption">Hardware design view</figcaption></figure>
+              <figure class="media-card"><img loading="lazy" class="case-image" src="../assets/images/smart-iot-datalogger/pcb.png" alt="Smart IoT Datalogger PCB view"><figcaption class="media-caption">Interface and hardware design detail</figcaption></figure>
             </div>
           </section>
 
@@ -110,19 +109,23 @@
               <li>HTTP POST and MQTT for server or near-real-time monitoring workflows.</li>
             </ul>
             <div class="gallery-grid">
-              <figure class="media-card"><img class="case-image" src="../assets/images/smart-iot-datalogger/foundation.png" alt="Smart IoT Datalogger communication and dashboard"><figcaption class="media-caption">Communication and dashboard view</figcaption></figure>
-              <figure class="media-card"><img class="case-image" src="../assets/images/smart-iot-datalogger/database.png" alt="Smart IoT Datalogger backend data"><figcaption class="media-caption">Backend data view</figcaption></figure>
-              <figure class="media-card wide"><img class="case-image" src="../assets/images/smart-iot-datalogger/dashboard.png" alt="Smart IoT Datalogger dashboard"><figcaption class="media-caption">Simple dashboard view</figcaption></figure>
+              <figure class="media-card"><img loading="lazy" class="case-image" src="../assets/images/smart-iot-datalogger/foundation.png" alt="Smart IoT Datalogger communication and dashboard"><figcaption class="media-caption">Communication and dashboard view</figcaption></figure>
+              <figure class="media-card"><img loading="lazy" class="case-image" src="../assets/images/smart-iot-datalogger/database.png" alt="Smart IoT Datalogger backend data"><figcaption class="media-caption">Backend data view</figcaption></figure>
+              <figure class="media-card wide"><img loading="lazy" class="case-image" src="../assets/images/smart-iot-datalogger/dashboard.png" alt="Smart IoT Datalogger dashboard"><figcaption class="media-caption">Simple dashboard view</figcaption></figure>
             </div>
           </section>
 
           <section class="card case-section reveal" id="takeaway">
             <span class="kicker">05 Takeaway</span>
-            <h2>Strong foundations before scale.</h2>
-            <p>This project reinforced the value of reliable foundations before optimizing for performance or scalability in IoT applications.</p>
+            <h2>What the proof of concept demonstrates.</h2>
+            <p>The documented prototype brings sensing, local storage, wireless communication, and backend monitoring into one system. The photographs and screenshots above show the hardware and data-handling layers.</p>
+            <div class="evidence-note"><h3>Scope and limits</h3><p>This is a learning-focused proof of concept. The public case study does not include measured uptime, battery life, transmission range, or production deployment results. Some implementation details are generalized to respect confidentiality.</p></div>
+            <h3>Engineering decisions</h3>
+            <dl class="project-evidence"><div><dt>Separate the system into layers</dt><dd>Sensing, storage, communication, and backend components can be examined independently when debugging.</dd></div><div><dt>Keep local storage in the architecture</dt><dd>The SD card gives data acquisition a local logging path alongside remote transmission.</dd></div><div><dt>Configure one wireless method at a time</dt><dd>Wi-Fi, GSM, and LoRa serve different deployment constraints. A single active method limits configuration complexity and power demand.</dd></div></dl>
           </section>
         </div>
       </div>
+      <nav class="case-next" aria-label="More project work"><span>Next case study</span><a href="smart-rice-machine.html">Smart Rice Machine: identity to dispensing <span aria-hidden="true">→</span></a></nav>
     </div>
   </main>
 

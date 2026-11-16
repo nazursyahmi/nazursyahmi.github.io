@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body class="premium-site saas-home">
-  <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="brand" href="index.html"><span class="brand-mark">NS</span><span>Ts Muhammad Nazur Syahmi<small>Hardware Developer (Electronic)</small></span></a>
       <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open navigation">
@@ -28,7 +29,7 @@
     </div>
   </nav>
 
-  <main class="page-main">
+  <main class="page-main" id="main-content" tabindex="-1">
     <div class="container">
       <section class="page-intro-grid reveal">
         <div>
@@ -37,7 +38,7 @@
           <p class="lead">A place for concise engineering notes on PCB decisions, firmware patterns, prototype debugging, IoT architecture, and delivery workflow.</p>
         </div>
         <aside class="motion-card compact">
-          <img src="assets/images/profilegif.gif" alt="Animated technical notes visual">
+          <img loading="lazy" src="assets/images/profilegif.gif" alt="Animated technical notes visual">
           <div><strong>Build notes</strong><span>Small lessons from real engineering work.</span></div>
         </aside>
       </section>

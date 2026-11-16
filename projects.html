@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body class="premium-site saas-home">
-  <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="brand" href="index.html"><span class="brand-mark">NS</span><span>Ts Muhammad Nazur Syahmi<small>Hardware Developer (Electronic)</small></span></a>
       <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open navigation">
@@ -28,7 +29,7 @@
     </div>
   </nav>
 
-  <main class="page-main">
+  <main class="page-main" id="main-content" tabindex="-1">
     <div class="container">
       <section class="page-intro-grid reveal">
         <div>
@@ -37,17 +38,17 @@
           <p class="lead">A curated portfolio of connected hardware, embedded systems, automation workflows, and prototype engineering.</p>
         </div>
         <aside class="motion-card">
-          <img src="assets/images/profilegif.gif" alt="Animated project profile visual">
-          <div><strong>Work in motion</strong><span>From prototype bench to deployed system.</span></div>
+          <img loading="lazy" src="assets/images/profilegif.gif" alt="Animated project profile visual">
+          <div><strong>Inside the projects</strong><span>Engineering decisions, system workflows, and prototype evidence.</span></div>
         </aside>
       </section>
 
-      <section class="grid-3" aria-label="Project case studies">
+      <section class="grid-2" aria-label="Project case studies">
         <a class="project-card reveal" href="projects/smart-iot-datalogger.html">
-          <div class="project-media"><img src="assets/images/smart-iot-datalogger/system_architecture.png" alt="Smart IoT Datalogger architecture"></div>
+          <div class="project-media"><img loading="lazy" src="assets/images/smart-iot-datalogger/system_architecture.png" alt="Smart IoT Datalogger architecture"></div>
           <div class="project-body">
             <h2>Smart IoT Datalogger</h2>
-            <p>ESP32-based modular datalogger for local storage, LoRa/GSM/Wi-Fi communication, and dashboard integration.</p>
+            <p>Proof-of-concept sensor logging with ESP32, SD storage, configurable wireless connectivity, and dashboard integration. Includes hardware photos and architecture diagrams.</p>
             <div class="tag-list"><span class="tag">ESP32</span><span class="tag">Firmware</span><span class="tag">IoT</span></div>
           </div>
         </a>
@@ -56,19 +57,12 @@
           <div class="project-media"><i class="bi bi-person-vcard"></i></div>
           <div class="project-body">
             <h2>Smart Rice Machine</h2>
-            <p>RFID-driven aid distribution system combining beneficiary records, backend validation, and dispensing control.</p>
+            <p>NGO rice distribution workflow connecting RFID identity to allocation checks and dispensing control. My work spans system logic, PHP/MySQL, and machine integration.</p>
             <div class="tag-list"><span class="tag">RFID</span><span class="tag">Automation</span><span class="tag">PHP/MySQL</span></div>
           </div>
         </a>
 
-        <article class="project-card reveal">
-          <div class="project-media"><i class="bi bi-cpu"></i></div>
-          <div class="project-body">
-            <h2>PCB Prototype Work</h2>
-            <p>Board-level design, testing, and prototype documentation will be published as public-ready case notes.</p>
-            <div class="tag-list"><span class="tag">PCB</span><span class="tag">Bring-up</span><span class="tag">Validation</span></div>
-          </div>
-        </article>
+
       </section>
     </div>
   </main>
