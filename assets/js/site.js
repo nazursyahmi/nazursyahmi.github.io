@@ -9,7 +9,8 @@ if (navToggle && navLinks) {
   const setMenuState = (isOpen) => {
     navLinks.classList.toggle("is-open", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
-    navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    if (window.PortfolioI18n) window.PortfolioI18n.updateNavigationLabel();
+    else navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
 
     if (toggleIcon) {
       toggleIcon.classList.toggle("bi-list", !isOpen);
@@ -71,6 +72,7 @@ if (document.body.classList.contains("onepage-home") && navLinks) {
     }
   }, { passive: true });
   window.addEventListener("resize", updateCurrentSection);
+  document.addEventListener("portfolio:languagechange", updateCurrentSection);
   updateCurrentSection();
 }
 

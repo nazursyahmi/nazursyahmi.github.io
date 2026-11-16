@@ -28,7 +28,17 @@ The site uses Bootstrap 5.3.3 CSS, Bootstrap Icons pinned to 1.11.3, and Google 
 - Verify internal paths and fragments, keyboard navigation, and layouts at 375px, 768px, and 1280px.
 - Inspect public documents and screenshots for private details before publication. `.gitignore` does not remove files from earlier history.
 
-## GitHub Pages
+## Languages
+
+All seven HTML pages offer an EN / BM switch. English is the default; `portfolio.language` in browser local storage remembers `en` or `ms`. If storage is blocked, switching works for the current page. Without JavaScript, the complete English page remains usable and the language controls stay hidden.
+
+`assets/js/i18n.js` contains the Bahasa Melayu dictionary and updates existing text nodes through explicit `data-i18n-text` keys. Keys correspond to the element's nonempty direct text nodes in order; `-` leaves a node unchanged. Attribute keys use `data-i18n-aria-label` or `data-i18n-alt`. Preserve the original English text in HTML and add or update dictionary entries whenever copy changes. Do not translate certificate titles, personal names, device identifiers, code, or original documents.
+
+Contact draft templates follow the selected language; recipients and the original English URLs remain unchanged. Page URLs, source metadata, canonical links, and social previews remain English; this implementation does not provide separately indexed BM pages.
+
+Run `node --test tests/i18n.test.cjs` for language behavior and seven-page integration checks. Also visually review both languages on mobile and desktop, especially longer Malay labels, before publishing.
+
+## GitHub Pages publishing
 
 This is the root user site, using real `.html` paths without client-side routing. The custom 404 uses root-relative links so recovery works for nested missing URLs. No build system or routing rewrite is required.
 

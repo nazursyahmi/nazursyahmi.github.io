@@ -25,18 +25,19 @@
   <meta name="twitter:image" content="https://nazursyahmi.github.io/assets/images/nazursyahmi.jpg">
 </head>
 <body class="premium-site saas-home">
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <nav class="site-nav" aria-label="Main navigation">
+  <a class="skip-link" href="#main-content" data-i18n-text="copy.002">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="copy.003">
     <div class="container nav-inner">
-      <a class="brand" href="index.html"><span class="brand-mark">NS</span><span>Ts Muhammad Nazur Syahmi<small>Hardware Developer (Electronic)</small></span></a>
-      <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">NS</span><span>Ts Muhammad Nazur Syahmi<small data-i18n-text="copy.005">Hardware Developer (Electronic)</small></span></a>
+      <div class="language-switch" role="group" aria-label="Language" data-i18n-aria-label="language.label" hidden><button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">EN</button><button type="button" data-language="ms" lang="ms" aria-label="Bahasa Melayu" aria-pressed="false">BM</button></div>
+      <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open navigation" data-i18n-aria-label="copy.006">
         <i class="bi bi-list" aria-hidden="true"></i>
       </button>
       <div class="nav-links" id="site-menu">
-        <a href="index.html"><i class="bi bi-house" aria-hidden="true"></i>Home</a>
-        <a href="projects.html"><i class="bi bi-kanban" aria-hidden="true"></i>Projects</a>
-        <a class="active" aria-current="page" href="notes.html"><i class="bi bi-journal-text" aria-hidden="true"></i>Notes</a>
-        <a href="contact.html"><i class="bi bi-send" aria-hidden="true"></i>Contact</a>
+        <a href="index.html" data-i18n-text="nav.home"><i class="bi bi-house" aria-hidden="true"></i>Home</a>
+        <a href="projects.html" data-i18n-text="copy.153"><i class="bi bi-kanban" aria-hidden="true"></i>Projects</a>
+        <a class="active" aria-current="page" href="notes.html" data-i18n-text="copy.012"><i class="bi bi-journal-text" aria-hidden="true"></i>Notes</a>
+        <a href="contact.html" data-i18n-text="copy.013"><i class="bi bi-send" aria-hidden="true"></i>Contact</a>
       </div>
     </div>
   </nav>
@@ -45,17 +46,17 @@
     <div class="container">
       <section class="page-intro-grid reveal">
         <div>
-          <span class="kicker">Notes</span>
-          <h1>Technical notes and build logs.</h1>
-          <p class="lead">A short Git workflow reference for maintaining small engineering repositories.</p>
+          <span class="kicker" data-i18n-text="copy.012">Notes</span>
+          <h1 data-i18n-text="copy.218">Technical notes and build logs.</h1>
+          <p class="lead" data-i18n-text="copy.219">A short Git workflow reference for maintaining small engineering repositories.</p>
         </div>
         <aside class="motion-card compact">
           <img loading="lazy" src="assets/images/profile-preview.webp" alt="" width="800" height="600">
-          <div><strong>Build notes</strong><span>Small lessons from real engineering work.</span></div>
+          <div><strong data-i18n-text="copy.220">Build notes</strong><span data-i18n-text="copy.221">Small lessons from real engineering work.</span></div>
         </aside>
       </section>
 
-      <section class="grid-3" aria-label="Technical notes">
+      <section class="grid-3" aria-label="Technical notes" data-i18n-aria-label="copy.222">
         <template>
         <article class="note-card reveal">
           <span class="kicker">Coming Soon</span>
@@ -71,18 +72,20 @@
         </article>
         </template>
         <article class="note-card reveal">
-          <span class="kicker">Existing Note</span>
-          <h2>Simple Git Workflow</h2>
-          <p>Basic pull, commit, and push flow for maintaining small engineering repositories.</p>
-          <div class="action-row"><a class="btn subtle" href="notes/git-workflow.md"><i class="bi bi-filetype-md" aria-hidden="true"></i>Open Note</a></div>
+          <span class="kicker" data-i18n-text="copy.223">Existing Note</span>
+          <h2 data-i18n-text="copy.224">Simple Git Workflow</h2>
+          <p data-i18n-text="copy.225">Basic pull, commit, and push flow for maintaining small engineering repositories.</p>
+          <div class="action-row"><a class="btn subtle" href="notes/git-workflow.md" data-i18n-text="copy.226"><i class="bi bi-filetype-md" aria-hidden="true"></i>Open Note</a></div>
         </article>
       </section>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner"><span>Notes | Ts Muhammad Nazur Syahmi</span><span>Engineering thinking in public</span></div>
+    <div class="container footer-inner"><span data-i18n-text="copy.227">Notes | Ts Muhammad Nazur Syahmi</span><span data-i18n-text="copy.228">Engineering thinking in public</span></div>
   </footer>
+  <span class="language-status" role="status" aria-live="polite" aria-atomic="true" data-language-status></span>
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/site.js"></script>
 </body>
 </html>
